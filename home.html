@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="192x192" href="https://static.wixstatic.com/media/7e0273_7c59cd7dae1b4f9a8cd65670f2e4951b~mv2.png/v1/fill/w_192,h_192,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/logo.png"/>
+  <link rel="shortcut icon" href="https://static.wixstatic.com/media/7e0273_7c59cd7dae1b4f9a8cd65670f2e4951b~mv2.png/v1/fill/w_192,h_192,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/logo.png"/>
+  <link rel="apple-touch-icon" href="https://static.wixstatic.com/media/7e0273_7c59cd7dae1b4f9a8cd65670f2e4951b~mv2.png/v1/fill/w_192,h_192,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/logo.png"/>
+  <!-- WhatsApp / Redes sociales -->
+  <meta name="description" content="Apoyá a nuestra comunidad. Cada aporte hace la diferencia."/>
+  <meta property="og:site_name" content="El Lazo · Juventud Judía"/>
+  <meta property="og:title" content="El Lazo · Juventud Judía"/>
+  <meta property="og:description" content="Apoyá a nuestra comunidad. Cada aporte hace la diferencia."/>
+  <meta property="og:image" content="https://static.wixstatic.com/media/7e0273_7c59cd7dae1b4f9a8cd65670f2e4951b~mv2.png/v1/fill/w_1200,h_630,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/logo.png"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://pagos.ellazo.com.ar"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="El Lazo · Juventud Judía"/>
+  <meta name="twitter:description" content="Apoyá a nuestra comunidad. Cada aporte hace la diferencia."/>
+  <meta name="twitter:image" content="https://static.wixstatic.com/media/7e0273_7c59cd7dae1b4f9a8cd65670f2e4951b~mv2.png/v1/fill/w_1200,h_630,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/logo.png"/>
+<title>El Lazo · Campañas</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--cream:#FAF7F2;--dk:#F2EDE4;--ink:#1A1612;--soft:#4A4440;--muted:#8A817A;--gold:#C9974A;--gl:#E8C080;--gp:#FDF5E6;--ok:#2E7D52;--er:#C0392B;--bd:#E0D8CF;--r:14px}
+body{font-family:'Poppins',sans-serif;background:var(--cream);color:var(--ink);min-height:100vh}
+.hdr{background:var(--ink);padding:1rem 1.5rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.logo{height:42px;object-fit:contain}
+.hdr-links{display:flex;gap:.75rem;align-items:center}
+.hdr-links a{color:rgba(255,255,255,.6);font-size:.82rem;text-decoration:none;padding:.4rem .8rem;border:1px solid rgba(255,255,255,.15);border-radius:8px}
+.hdr-links a:hover{color:var(--gl);border-color:rgba(255,255,255,.3)}
+.hdr-links a.cta{background:var(--gold);color:var(--ink);border-color:transparent;font-weight:600}
+.hdr-links a.cta:hover{background:var(--gl)}
+.hero{background:linear-gradient(135deg,#1a1612,#2d1f0a);padding:2.5rem 1.5rem;text-align:center}
+.hero h1{font-family:'Oswald',sans-serif;font-size:clamp(1.8rem,4vw,2.8rem);color:white;margin-bottom:.6rem}
+.hero p{color:rgba(255,255,255,.6);font-size:.95rem;max-width:420px;margin:0 auto}
+.main{max-width:1080px;margin:0 auto;padding:2.5rem 1.25rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.25rem}
+.card{background:white;border:1px solid var(--bd);border-radius:var(--r);overflow:hidden;text-decoration:none;color:inherit;display:block;transition:all .2s}
+.card:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(0,0,0,.12)}
+.card-img{width:100%;height:170px;object-fit:cover;display:block}
+.card-noimg{width:100%;height:90px;background:var(--dk);display:flex;align-items:center;justify-content:center}
+.card-noimg img{height:35px;opacity:.35}
+.card-body{padding:1.2rem}
+.card-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:.35rem}
+.card-org{font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
+.tipo-badge{font-size:.65rem;font-weight:700;padding:.12rem .5rem;border-radius:99px}
+.card-title{font-family:'Oswald',sans-serif;font-size:1.15rem;font-weight:700;margin-bottom:.4rem;line-height:1.25}
+.card-desc{font-size:.83rem;color:var(--muted);line-height:1.55;margin-bottom:.85rem;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.progress-wrap{margin-bottom:.85rem}
+.progress-labels{display:flex;justify-content:space-between;font-size:.73rem;margin-bottom:.3rem}
+.progress-bar{height:7px;background:var(--dk);border-radius:99px;overflow:hidden}
+.progress-fill{height:100%;background:linear-gradient(90deg,var(--gold),var(--gl));border-radius:99px;transition:width .5s}
+.card-footer{display:flex;align-items:center;justify-content:space-between;gap:.5rem;flex-wrap:wrap}
+.cierre-badge{font-size:.73rem;color:var(--muted)}
+.cierre-badge.soon{color:var(--er);font-weight:600}
+.btn-donar{padding:.6rem 1.3rem;background:var(--ink);color:white;border-radius:9px;font-size:.85rem;font-weight:700;text-decoration:none;display:inline-block;transition:background .15s}
+.btn-donar:hover{background:var(--gold)}
+.donantes-recientes{margin-top:.6rem;padding-top:.6rem;border-top:1px solid var(--bd)}
+.dr-title{font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem}
+.dr-chip{display:inline-flex;align-items:center;gap:.25rem;font-size:.72rem;padding:.15rem .5rem;border-radius:99px;background:var(--dk);color:var(--soft);margin:.1rem .1rem .1rem 0}
+.dr-monto{font-weight:700;color:var(--gold)}
+.socios-bar{background:var(--ink);border-radius:var(--r);padding:1.6rem 1.75rem;margin-top:2rem}
+.socios-bar h3{font-family:'Oswald',sans-serif;color:var(--gl);font-size:1.1rem}
+.socios-bar-top{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;margin-bottom:1.2rem;flex-wrap:wrap}
+.socios-sub{font-size:.78rem;color:rgba(255,255,255,.4);margin-top:.15rem}
+.socios-tiers{display:flex;flex-direction:column;gap:.8rem}
+.tier-row{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap}
+.tier-lbl{display:flex;align-items:center;gap:.35rem;min-width:72px;flex-shrink:0}
+.tier-dot{width:8px;height:8px;border-radius:50%}
+.tier-nm{font-size:.67rem;font-weight:700;color:rgba(255,255,255,.45);text-transform:uppercase;letter-spacing:.1em}
+.socios-chips{display:flex;flex-wrap:wrap;gap:.3rem}
+.sc{display:inline-flex;align-items:center;gap:.3rem;padding:.3rem .75rem;border-radius:99px;font-size:.8rem;font-weight:600}
+.btn-ver{padding:.55rem 1.2rem;border:1.5px solid var(--gold);color:var(--gold);border-radius:9px;font-size:.83rem;font-weight:700;text-decoration:none;white-space:nowrap}
+.btn-ver:hover{background:var(--gold);color:var(--ink)}
+.empty{text-align:center;padding:3rem;color:var(--muted)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.loading{display:flex;align-items:center;justify-content:center;min-height:35vh;gap:.75rem;color:var(--muted)}
+.sp{width:32px;height:32px;border:3px solid var(--bd);border-top-color:var(--gold);border-radius:50%;animation:spin .7s linear infinite}
+footer{text-align:center;padding:1.5rem;font-size:.73rem;color:var(--muted);border-top:1px solid var(--bd);margin-top:2rem}
+footer a{color:var(--gold);text-decoration:none}
+@media(max-width:560px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="hdr">
+  <img class="logo" src="https://static.wixstatic.com/media/7e0273_7c59cd7dae1b4f9a8cd65670f2e4951b~mv2.png/v1/crop/x_93,y_0,w_1589,h_834/fill/w_210,h_110,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/logo.png" alt="El Lazo"/>
+  <div class="hdr-links">
+    <a href="/mi-cuenta">Mi cuenta</a>
+  </div>
+</header>
+<div class="hero">
+  <h1>Apoyá a El Lazo</h1>
+  <p>Elegí la campaña que más te resuene y sumate. Cada aporte hace la diferencia.</p>
+</div>
+<main class="main">
+  <div id="campanas-wrap"><div class="loading"><div class="sp"></div>Cargando campañas...</div></div>
+  <div id="socios-wrap" style="display:none" class="socios-bar">
+    <div class="socios-bar-top">
+      <div>
+        <h3>🤝 Partners de El Lazo</h3>
+        <div class="socios-sub">Personas que apoyan mensualmente nuestra comunidad</div>
+      </div>
+      <a href="/mi-cuenta" class="btn-ver">Ver todos →</a>
+    </div>
+    <div class="socios-tiers" id="socios-chips"></div>
+  </div>
+</main>
+<footer><strong>El Lazo · Juventud Judía</strong> · <a href="/mi-cuenta">Mi cuenta</a></footer>
+
+<script>
+const API = 'https://nhmaciyqffgjumatgtfh.supabase.co/functions/v1/mp-pagos';
+const LOGO = 'https://static.wixstatic.com/media/7e0273_7c59cd7dae1b4f9a8cd65670f2e4951b~mv2.png/v1/crop/x_93,y_0,w_1589,h_834/fill/w_210,h_110,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/logo.png';
+
+async function init() {
+  const [rm, rp] = await Promise.all([
+    fetch(API+'/marketplace').then(r=>r.json()).catch(()=>({campanas:[]})),
+    fetch(API+'/partners/publicos').then(r=>r.json()).catch(()=>({partners:[]})),
+  ]);
+  renderCampanas(rm.campanas||[]);
+  renderSocios(rp.partners||[]);
+}
+
+function renderCampanas(camps) {
+  const wrap = document.getElementById('campanas-wrap');
+  if (!camps.length) { wrap.innerHTML='<div class="empty">No hay campañas activas en este momento.</div>'; return; }
+  const now = new Date();
+  wrap.innerHTML = '<div class="grid">'+camps.map(c=>{
+    const cerrada = c.fecha_cierre && new Date(c.fecha_cierre)<now;
+    const dias = c.fecha_cierre ? Math.ceil((new Date(c.fecha_cierre)-now)/(864e5)) : null;
+    const pct = (c.meta_recaudacion&&c.recaudado!==null) ? Math.min(100,Math.round(c.recaudado/c.meta_recaudacion*100)) : null;
+    const tipoBg = c.tipo_campana==='donacion'?'#E8F5EE':'#EEF0FF';
+    const tipoColor = c.tipo_campana==='donacion'?'#2E7D52':'#3730A3';
+    const tipoLabel = c.tipo_campana==='donacion'?'Donación':'Pago';
+    return `<a class="card" href="/${x(c.slug)}">
+      ${c.imagen_url?`<img class="card-img" src="${x(c.imagen_url)}" onerror="this.style.display='none'">`:`<div class="card-noimg"><img src="${LOGO}"/></div>`}
+      <div class="card-body">
+        <div class="card-top">
+          <span class="card-org">${x(c.org||'El Lazo')}</span>
+          <span class="tipo-badge" style="background:${tipoBg};color:${tipoColor}">${tipoLabel}</span>
+        </div>
+        <div class="card-title">${x(c.titulo)}</div>
+        ${c.descripcion?`<div class="card-desc">${x(c.descripcion)}</div>`:''}
+        ${pct!==null?`<div class="progress-wrap">
+          <div class="progress-labels"><span style="font-weight:700">$${fmt(c.recaudado)}</span><span style="color:var(--muted)">${pct}% de $${fmt(c.meta_recaudacion)}</span></div>
+          <div class="progress-bar"><div class="progress-fill" style="width:${pct}%"></div></div>
+        </div>`:(c.recaudado>0?`<p style="font-size:.8rem;color:var(--gold);font-weight:600;margin-bottom:.75rem">$${fmt(c.recaudado)} recaudados</p>`:'')}
+        ${c.mostrar_donantes&&c.donantes_recientes?.length?`<div class="donantes-recientes"><div class="dr-title">Donantes recientes</div>${c.donantes_recientes.slice(0,4).map(d=>`<span class="dr-chip">${x(d.nombre)} <span class="dr-monto">$${fmt(d.monto)}</span></span>`).join('')}</div>`:''}
+        <div class="card-footer" style="margin-top:.75rem">
+          ${dias!==null?(cerrada?`<span style="color:var(--er);font-size:.73rem;font-weight:600">Cerrada</span>`:`<span class="cierre-badge${dias<=7?' soon':''}">⏱ ${dias}d</span>`):'<span></span>'}
+          ${cerrada?'':`<span class="btn-donar">Apoyar →</span>`}
+        </div>
+      </div>
+    </a>`;
+  }).join('')+'</div>';
+}
+
+function renderSocios(partners) {
+  if (!partners.length) return;
+  const max30 = partners.slice(0,30);
+  document.getElementById('socios-wrap').style.display='block';
+  const byTier={};
+  max30.forEach(p=>{
+    const t=p.tier||'Partners'; const c=p.color||'#C9974A';
+    if(!byTier[t])byTier[t]={color:c,items:[]};
+    byTier[t].items.push(p);
+  });
+  document.getElementById('socios-chips').innerHTML=Object.entries(byTier).map(([tier,{color,items}])=>`
+    <div class="tier-row">
+      <div class="tier-lbl"><div class="tier-dot" style="background:${color}"></div><span class="tier-nm">${x(tier)}</span></div>
+      <div class="socios-chips">${items.map(p=>`<span class="sc" style="background:${color}20;color:${color};border:1px solid ${color}40">⭐ ${x(p.nombre)}</span>`).join('')}</div>
+    </div>`).join('');
+}
+
+const fmt = n => new Intl.NumberFormat('es-AR').format(Math.round(n||0));
+const x = s => String(s||'').replace(/[<>&"]/g,c=>({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'}[c]));
+init();
+</script>
+</body></html>

@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="192x192" href="https://static.wixstatic.com/media/7e0273_7c59cd7dae1b4f9a8cd65670f2e4951b~mv2.png/v1/fill/w_192,h_192,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/logo.png"/>
+  <link rel="shortcut icon" href="https://static.wixstatic.com/media/7e0273_7c59cd7dae1b4f9a8cd65670f2e4951b~mv2.png/v1/fill/w_192,h_192,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/logo.png"/>
+  <link rel="apple-touch-icon" href="https://static.wixstatic.com/media/7e0273_7c59cd7dae1b4f9a8cd65670f2e4951b~mv2.png/v1/fill/w_192,h_192,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/logo.png"/>
+  <!-- WhatsApp / Redes sociales -->
+  <meta name="description" content="Apoyá a nuestra comunidad. Cada aporte hace la diferencia."/>
+  <meta property="og:site_name" content="El Lazo · Juventud Judía"/>
+  <meta property="og:title" content="El Lazo · Juventud Judía"/>
+  <meta property="og:description" content="Apoyá a nuestra comunidad. Cada aporte hace la diferencia."/>
+  <meta property="og:image" content="https://static.wixstatic.com/media/7e0273_7c59cd7dae1b4f9a8cd65670f2e4951b~mv2.png/v1/fill/w_1200,h_630,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/logo.png"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://pagos.ellazo.com.ar"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="El Lazo · Juventud Judía"/>
+  <meta name="twitter:description" content="Apoyá a nuestra comunidad. Cada aporte hace la diferencia."/>
+  <meta name="twitter:image" content="https://static.wixstatic.com/media/7e0273_7c59cd7dae1b4f9a8cd65670f2e4951b~mv2.png/v1/fill/w_1200,h_630,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/logo.png"/>
+<title>Mi cuenta · El Lazo</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--cr:#FAF7F2;--dk:#F2EDE4;--ink:#1A1612;--so:#4A4440;--mu:#8A817A;--go:#C9974A;--gl:#E8C080;--gp:#FDF5E6;--ok:#2E7D52;--er:#C0392B;--pend:#D68910;--bd:#E0D8CF;--bok:#E8F5EE;--ber:#FDECEA;--bw:#FEF9EC;--r:14px}
+body{font-family:'Poppins',sans-serif;background:var(--cr);color:var(--ink);min-height:100vh}
+/* AUTH */
+.auth{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:2rem;background:var(--ink)}
+.ab{background:#1a1714;border:1px solid #2e2a25;border-radius:20px;padding:2rem;width:100%;max-width:400px}
+.ab img{height:44px;display:block;margin:0 auto 1.25rem}
+.ab h1{font-family:'Oswald',sans-serif;color:var(--gl);font-size:1.35rem;text-align:center;margin-bottom:.2rem}
+.ab p{color:#8a817a;font-size:.8rem;text-align:center;margin-bottom:1.4rem}
+.atabs{display:flex;border:1px solid #2e2a25;border-radius:10px;overflow:hidden;margin-bottom:1.3rem}
+.atab{flex:1;padding:.62rem;text-align:center;font-size:.84rem;font-weight:600;cursor:pointer;color:#8a817a;transition:all .15s}
+.atab.on{background:var(--go);color:#111}
+.af{margin-bottom:.82rem}
+.af label{font-size:.63rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#8a817a;display:block;margin-bottom:.3rem}
+.pw-wrap{position:relative}
+.pw-wrap input{width:100%;background:#0f0e0d;border:1.5px solid #2e2a25;border-radius:10px;padding:.78rem 2.5rem .78rem 1rem;color:#e8e0d5;font-family:'Poppins',sans-serif;font-size:.92rem;outline:none}
+.pw-wrap input:focus{border-color:var(--go)}
+.af input:not(.pw-wrap input){width:100%;background:#0f0e0d;border:1.5px solid #2e2a25;border-radius:10px;padding:.78rem 1rem;color:#e8e0d5;font-family:'Poppins',sans-serif;font-size:.92rem;outline:none}
+.af input:focus{border-color:var(--go)}
+.eye{position:absolute;right:.75rem;top:50%;transform:translateY(-50%);background:none;border:none;color:#8a817a;cursor:pointer;font-size:1rem;padding:.2rem;line-height:1}
+.eye:hover{color:var(--go)}
+.af-row{display:grid;grid-template-columns:1fr 1fr;gap:.6rem}
+.btn-auth{width:100%;padding:.82rem;background:var(--go);color:#111;border:none;border-radius:10px;font-weight:700;font-size:.97rem;cursor:pointer;font-family:'Poppins',sans-serif;margin-top:.2rem}
+.btn-auth:hover{background:var(--gl)}
+.amsg{font-size:.8rem;text-align:center;margin-top:.6rem;display:none}
+.amsg.vis{display:block}
+.amsg.err{color:#e57373}.amsg.ok{color:#4caf82}
+/* RECUPERAR */
+.rec-panel{display:none}
+.rec-panel.vis{display:block}
+.rec-back{background:none;border:none;color:#8a817a;cursor:pointer;font-size:.82rem;margin-bottom:1rem;font-family:'Poppins',sans-serif;padding:0;text-decoration:underline}
+.rec-back:hover{color:var(--go)}
+/* HEADER APP */
+.hdr{background:var(--ink);padding:1rem 1.5rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.logo{height:40px;object-fit:contain}
+.hr{display:flex;align-items:center;gap:.75rem}
+.hn{font-size:.8rem;color:rgba(255,255,255,.6)}
+.btn-h{padding:.38rem .82rem;border:1.5px solid rgba(255,255,255,.2);background:none;color:rgba(255,255,255,.6);border-radius:8px;font-size:.76rem;cursor:pointer;font-family:'Poppins',sans-serif;text-decoration:none;display:inline-block}
+.btn-h:hover{border-color:var(--gl);color:var(--gl)}
+/* TABS */
+.wrap{max-width:700px;margin:0 auto;padding:2rem 1.25rem 3rem}
+.tabs{display:flex;border-bottom:2px solid var(--bd);margin-bottom:2rem;overflow-x:auto}
+.tab{padding:.7rem 1.1rem;font-size:.86rem;font-weight:600;color:var(--mu);cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;white-space:nowrap;transition:all .15s}
+.tab.on{color:var(--go);border-bottom-color:var(--go)}
+.panel{display:none}.panel.on{display:block}
+/* PERFIL */
+.phero{background:var(--ink);border-radius:var(--r);padding:1.5rem;margin-bottom:1.5rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+.pav{width:50px;height:50px;background:var(--go);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Oswald',sans-serif;font-size:1.25rem;font-weight:700;color:var(--ink);flex-shrink:0}
+.pid{font-size:.63rem;font-weight:700;letter-spacing:.12em;color:var(--gl);text-transform:uppercase;margin-bottom:.18rem}
+.pnm{font-family:'Oswald',sans-serif;font-size:1.2rem;font-weight:700;color:white}
+.pem{font-size:.78rem;color:rgba(255,255,255,.5);margin-top:.1rem}
+.pstats{display:flex;gap:1.5rem;background:var(--dk);border-radius:var(--r);padding:.95rem 1.15rem;margin-bottom:1.4rem;flex-wrap:wrap}
+.psv{font-family:'Oswald',sans-serif;font-size:1.35rem;font-weight:700;color:var(--go)}
+.psl{font-size:.63rem;color:var(--mu);text-transform:uppercase;letter-spacing:.08em}
+.fg{margin-bottom:.8rem}
+.fg label{font-size:.65rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--so);display:block;margin-bottom:.32rem}
+.fg input{width:100%;border:1.5px solid var(--bd);background:var(--cr);border-radius:10px;padding:.72rem 1rem;font-family:'Poppins',sans-serif;font-size:.92rem;color:var(--ink);outline:none}
+.fg input:focus{border-color:var(--go);background:white}
+.fg-pw{position:relative}
+.fg-pw input{padding-right:2.5rem}
+.fg-pw .eye2{position:absolute;right:.75rem;top:50%;transform:translateY(-50%);background:none;border:none;color:var(--mu);cursor:pointer;font-size:1rem;padding:.2rem;line-height:1}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:.65rem}
+/* HISTORIAL */
+.hi{background:white;border:1px solid var(--bd);border-radius:var(--r);padding:.95rem 1.15rem;margin-bottom:.58rem;display:flex;align-items:center;justify-content:space-between;gap:.75rem;flex-wrap:wrap}
+.ht{font-weight:600;font-size:.87rem}
+.hs{font-size:.72rem;color:var(--mu);margin-top:.1rem}
+.hm{font-family:'Oswald',sans-serif;font-size:1.02rem;font-weight:700}
+.hf{font-size:.7rem;color:var(--mu)}
+.badge{display:inline-flex;align-items:center;gap:.2rem;padding:.13rem .52rem;border-radius:99px;font-size:.63rem;font-weight:700}
+.badge::before{content:'●';font-size:.33rem}
+.badge.aprobado{background:var(--bok);color:var(--ok)}
+.badge.rechazado{background:var(--ber);color:var(--er)}
+.badge.pendiente{background:var(--bw);color:var(--pend)}
+/* SOCIOS */
+.tier-block{margin-bottom:1.7rem}
+.tier-hdr{display:flex;align-items:center;gap:.55rem;margin-bottom:.82rem}
+.tier-dot{width:11px;height:11px;border-radius:50%;flex-shrink:0}
+.tier-n{font-family:'Oswald',sans-serif;font-size:1.02rem;font-weight:600}
+.tier-cnt{font-size:.73rem;color:var(--mu);margin-left:.15rem}
+.chips{display:flex;flex-wrap:wrap;gap:.42rem}
+.chip{display:inline-flex;align-items:center;gap:.28rem;padding:.35rem .82rem;border-radius:99px;font-size:.8rem;font-weight:600;border:1.5px solid}
+/* SUSC */
+.sc{background:white;border:1px solid var(--bd);border-radius:var(--r);padding:1.05rem;margin-bottom:.62rem}
+.sc-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:.32rem}
+.sc-tier{font-weight:700}
+.sc-est{display:inline-flex;padding:.13rem .52rem;border-radius:99px;font-size:.65rem;font-weight:700}
+.sc-est.activo{background:var(--bok);color:var(--ok)}
+.sc-est.cancelado{background:var(--ber);color:var(--er)}
+.sc-monto{font-family:'Oswald',sans-serif;font-size:1.18rem;font-weight:700;color:var(--go)}
+.sc-info{font-size:.73rem;color:var(--mu);margin-top:.22rem}
+/* BTNS */
+.btn{padding:.58rem 1.1rem;border:none;border-radius:9px;font-family:'Poppins',sans-serif;font-size:.83rem;font-weight:600;cursor:pointer;transition:all .15s}
+.btn-dk{background:var(--ink);color:white}.btn-dk:hover{background:#2d2822}
+.btn-dan{background:transparent;border:1.5px solid var(--er);color:var(--er)}.btn-dan:hover{background:var(--er);color:white}
+.btn-sm{padding:.35rem .75rem;font-size:.74rem}
+.msg{font-size:.8rem;margin-top:.45rem;display:none}
+.msg.vis{display:block}
+.msg.ok{color:var(--ok)}.msg.err{color:var(--er)}
+.empty{text-align:center;padding:2rem;color:var(--mu);font-style:italic;font-size:.86rem}
+footer{text-align:center;padding:1.2rem;font-size:.7rem;color:var(--mu);border-top:1px solid var(--bd)}
+footer a{color:var(--go);text-decoration:none}
+.scta{background:var(--gp);border:1px solid var(--bd);border-radius:var(--r);padding:1.15rem;margin-top:1.4rem;text-align:center}
+.scta p{font-size:.83rem;color:var(--so);margin-bottom:.7rem}
+@media(max-width:390px){.frow{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<!-- AUTH SCREEN -->
+<div id="auth" class="auth">
+  <div class="ab">
+    <img src="https://static.wixstatic.com/media/7e0273_7c59cd7dae1b4f9a8cd65670f2e4951b~mv2.png/v1/crop/x_93,y_0,w_1589,h_834/fill/w_210,h_110,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/logo.png" alt="El Lazo"/>
+    <h1>Mi cuenta</h1>
+    <p>Accedé a tu historial de pagos</p>
+
+    <!-- TABS -->
+    <div class="atabs" id="atabs">
+      <div class="atab on" onclick="switchAuth('login')">Ingresar</div>
+      <div class="atab" onclick="switchAuth('registro')">Crear cuenta</div>
+    </div>
+
+    <!-- LOGIN -->
+    <div id="form-login">
+      <div class="af"><label>Email</label><input type="email" id="l-email" placeholder="tu@email.com" onkeydown="if(event.key==='Enter')login()"/></div>
+      <div class="af">
+        <label>Contraseña</label>
+        <div class="pw-wrap">
+          <input type="password" id="l-pwd" placeholder="••••••••" onkeydown="if(event.key==='Enter')login()"/>
+          <button class="eye" type="button" onclick="togglePwd('l-pwd',this)">👁</button>
+        </div>
+      </div>
+      <button class="btn-auth" onclick="login()">Ingresar</button>
+      <div class="amsg err" id="l-err"></div>
+      <div style="text-align:center;margin-top:.85rem">
+        <button style="background:none;border:none;color:var(--go);cursor:pointer;font-size:.8rem;font-family:'Poppins',sans-serif;text-decoration:underline" onclick="switchAuth('recuperar')">¿Olvidaste tu contraseña?</button>
+      </div>
+    </div>
+
+    <!-- REGISTRO -->
+    <div id="form-registro" style="display:none">
+      <div class="af-row">
+        <div class="af"><label>Nombre</label><input type="text" id="r-nombre" placeholder="Nombre"/></div>
+        <div class="af"><label>Apellido</label><input type="text" id="r-apellido" placeholder="Apellido"/></div>
+      </div>
+      <div class="af"><label>Email</label><input type="email" id="r-email" placeholder="tu@email.com"/></div>
+      <div class="af">
+        <label>Contraseña</label>
+        <div class="pw-wrap">
+          <input type="password" id="r-pwd" placeholder="Mínimo 6 caracteres"/>
+          <button class="eye" type="button" onclick="togglePwd('r-pwd',this)">👁</button>
+        </div>
+      </div>
+      <button class="btn-auth" onclick="registro()">Crear cuenta</button>
+      <div class="amsg err" id="r-err"></div>
+      <div class="amsg ok" id="r-ok">✓ ¡Cuenta creada! Bienvenido/a.</div>
+    </div>
+
+    <!-- RECUPERAR -->
+    <div id="form-recuperar" style="display:none">
+      <button class="rec-back" onclick="switchAuth('login')">← Volver al login</button>
+      <p style="color:#8a817a;font-size:.82rem;margin-bottom:1rem">Ingresá tu email y te mandamos un link para cambiar tu contraseña.</p>
+      <div class="af"><label>Tu email</label><input type="email" id="rec-email" placeholder="tu@email.com" onkeydown="if(event.key==='Enter')recuperar()"/></div>
+      <button class="btn-auth" onclick="recuperar()">Enviar link de recuperación</button>
+      <div class="amsg err" id="rec-err"></div>
+      <div class="amsg ok" id="rec-ok"></div>
+    </div>
+
+    <!-- RESET CON TOKEN (viene del email) -->
+    <div id="form-reset" style="display:none">
+      <input type="hidden" id="rst-token"/>
+      <p style="color:#8a817a;font-size:.82rem;margin-bottom:1rem">Elegí tu nueva contraseña.</p>
+      <div class="af">
+        <label>Nueva contraseña</label>
+        <div class="pw-wrap">
+          <input type="password" id="rst-pwd" placeholder="Mínimo 6 caracteres"/>
+          <button class="eye" type="button" onclick="togglePwd('rst-pwd',this)">👁</button>
+        </div>
+      </div>
+      <div class="af">
+        <label>Confirmar contraseña</label>
+        <div class="pw-wrap">
+          <input type="password" id="rst-pwd2" placeholder="Repetí la contraseña"/>
+          <button class="eye" type="button" onclick="togglePwd('rst-pwd2',this)">👁</button>
+        </div>
+      </div>
+      <button class="btn-auth" onclick="aplicarReset()">Cambiar contraseña</button>
+      <div class="amsg err" id="rst-err"></div>
+      <div class="amsg ok" id="rst-ok">✓ ¡Contraseña cambiada! Podés ingresar.</div>
+    </div>
+  </div>
+</div>
+
+<!-- APP -->
+<div id="app" style="display:none">
+  <header class="hdr">
+    <img class="logo" src="https://static.wixstatic.com/media/7e0273_7c59cd7dae1b4f9a8cd65670f2e4951b~mv2.png/v1/crop/x_93,y_0,w_1589,h_834/fill/w_210,h_110,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/logo.png" alt="El Lazo"/>
+    <div class="hr">
+      <a class="btn-h" href="/index.html">← Inicio</a>
+      <span class="hn" id="hn"></span>
+      <button class="btn-h" onclick="logout()">Salir</button>
+    </div>
+  </header>
+  <div class="wrap">
+    <div class="tabs">
+      <div class="tab on" onclick="goTab('perfil')">Mi perfil</div>
+      <div class="tab" onclick="goTab('historial')">Historial</div>
+      <div class="tab" onclick="goTab('suscripciones')">Suscripciones</div>
+      <div class="tab" onclick="goTab('socios')">Partners</div>
+      <div class="tab" onclick="goTab('seguridad')">Seguridad</div>
+    </div>
+
+    <!-- PERFIL -->
+    <div class="panel on" id="panel-perfil">
+      <div class="phero">
+        <div class="pav" id="pav">?</div>
+        <div><div class="pid" id="pid"></div><div class="pnm" id="pnm"></div><div class="pem" id="pem"></div></div>
+      </div>
+      <div class="pstats">
+        <div><div class="psv" id="ptotal">$0</div><div class="psl">Total donado</div></div>
+        <div><div class="psv" id="ppagos">0</div><div class="psl">Pagos</div></div>
+      </div>
+      <h3 style="font-family:'Oswald',sans-serif;font-size:.98rem;margin-bottom:.95rem">Actualizar datos</h3>
+      <div class="frow">
+        <div class="fg"><label>Nombre</label><input type="text" id="u-nom"/></div>
+        <div class="fg"><label>Apellido</label><input type="text" id="u-ape"/></div>
+      </div>
+      <div class="fg"><label>Celular</label><input type="tel" id="u-cel"/></div>
+      <button class="btn btn-dk" onclick="guardarDatos()">Guardar cambios</button>
+      <div class="msg ok" id="datos-ok">✓ Datos actualizados</div>
+      <div class="msg err" id="datos-err">Error al guardar</div>
+    </div>
+
+    <!-- HISTORIAL -->
+    <div class="panel" id="panel-historial">
+      <h3 style="font-family:'Oswald',sans-serif;font-size:1rem;margin-bottom:1.2rem">Mis pagos</h3>
+      <div id="hist-list"><div class="empty">Cargando...</div></div>
+    </div>
+
+    <!-- SUSCRIPCIONES -->
+    <div class="panel" id="panel-suscripciones">
+      <h3 style="font-family:'Oswald',sans-serif;font-size:1rem;margin-bottom:1.2rem">Mis suscripciones</h3>
+      <div id="susc-list"><div class="empty">Cargando...</div></div>
+    </div>
+
+    <!-- SOCIOS -->
+    <div class="panel" id="panel-socios">
+      <h3 style="font-family:'Oswald',sans-serif;font-size:1rem;margin-bottom:.4rem">Partners de El Lazo</h3>
+      <p style="font-size:.82rem;color:var(--mu);margin-bottom:1.4rem">Personas que apoyan mensualmente y hacen posible nuestra comunidad.</p>
+      <div id="socios-list"><div class="empty">Cargando...</div></div>
+      <div class="scta">
+        <p>¿Querés sumar tu apoyo mensual a El Lazo?</p>
+        <a href="/pago.html?s=partners" class="btn btn-dk btn-sm" style="text-decoration:none;display:inline-block">Ver opciones de Partner →</a>
+      </div>
+    </div>
+
+    <!-- SEGURIDAD -->
+    <div class="panel" id="panel-seguridad">
+      <h3 style="font-family:'Oswald',sans-serif;font-size:1rem;margin-bottom:1.2rem">Cambiar contraseña</h3>
+      <div class="fg">
+        <label>Contraseña actual</label>
+        <div class="fg-pw"><input type="password" id="pwd-act"/><button class="eye2" type="button" onclick="togglePwd('pwd-act',this)">👁</button></div>
+      </div>
+      <div class="fg">
+        <label>Nueva contraseña</label>
+        <div class="fg-pw"><input type="password" id="pwd-new"/><button class="eye2" type="button" onclick="togglePwd('pwd-new',this)">👁</button></div>
+      </div>
+      <div class="fg">
+        <label>Confirmar nueva</label>
+        <div class="fg-pw"><input type="password" id="pwd-con"/><button class="eye2" type="button" onclick="togglePwd('pwd-con',this)">👁</button></div>
+      </div>
+      <button class="btn btn-dk" onclick="cambiarPwd()">Cambiar contraseña</button>
+      <div class="msg ok" id="pwd-ok">✓ Contraseña actualizada</div>
+      <div class="msg err" id="pwd-err"></div>
+    </div>
+  </div>
+  <footer><a href="/index.html">← Campañas</a> · El Lazo Juventud Judía</footer>
+</div>
+
+<script>
+const API='https://nhmaciyqffgjumatgtfh.supabase.co/functions/v1/mp-pagos';
+let ME=null;
+
+// Toggle password visibility
+function togglePwd(id,btn){
+  const el=document.getElementById(id);
+  if(!el)return;
+  const show=el.type==='password';
+  el.type=show?'text':'password';
+  btn.textContent=show?'🙈':'👁';
+}
+
+// Auth tabs
+function switchAuth(mode){
+  const modes=['login','registro','recuperar','reset'];
+  const tabs=document.getElementById('atabs');
+  modes.forEach(m=>{
+    const el=document.getElementById('form-'+m);
+    if(el) el.style.display=m===mode?'block':'none';
+  });
+  // Show/hide tab bar
+  tabs.style.display=mode==='recuperar'?'none':'flex';
+  if(mode!=='recuperar'){
+    document.querySelectorAll('.atab').forEach((t,i)=>t.classList.toggle('on',i===(mode==='login'?0:1)));
+  }
+  // Clear messages
+  ['l-err','r-err','r-ok','rec-err','rec-ok'].forEach(id=>{const el=document.getElementById(id);if(el)el.classList.remove('vis');});
+}
+
+async function login(){
+  const email=document.getElementById('l-email').value.trim(),pwd=document.getElementById('l-pwd').value;
+  const err=document.getElementById('l-err');err.classList.remove('vis');
+  try{
+    const r=await fetch(API+'/portal/login',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email,password:pwd})});
+    const d=await r.json();if(!r.ok) throw new Error(d.error||'Error');
+    ME=d.donante;sessionStorage.setItem('el_me',JSON.stringify(ME));mostrarApp();
+  }catch(e){err.textContent=e.message;err.classList.add('vis');}
+}
+
+async function registro(){
+  const nombre=document.getElementById('r-nombre').value.trim(),apellido=document.getElementById('r-apellido').value.trim();
+  const email=document.getElementById('r-email').value.trim(),pwd=document.getElementById('r-pwd').value;
+  const err=document.getElementById('r-err'),ok=document.getElementById('r-ok');
+  err.classList.remove('vis');ok.classList.remove('vis');
+  if(!nombre||!apellido||!email||!pwd){err.textContent='Completá todos los campos';err.classList.add('vis');return;}
+  if(pwd.length<6){err.textContent='La contraseña debe tener al menos 6 caracteres';err.classList.add('vis');return;}
+  try{
+    const r=await fetch(API+'/portal/registro',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({nombre,apellido,email,password:pwd})});
+    const d=await r.json();if(!r.ok) throw new Error(d.error||'Error');
+    ok.classList.add('vis');ME=d.donante;sessionStorage.setItem('el_me',JSON.stringify(ME));
+    setTimeout(mostrarApp,1200);
+  }catch(e){err.textContent=e.message;err.classList.add('vis');}
+}
+
+async function recuperar(){
+  const email=document.getElementById('rec-email').value.trim();
+  const err=document.getElementById('rec-err'),ok=document.getElementById('rec-ok');
+  err.classList.remove('vis');ok.classList.remove('vis');
+  if(!email){err.textContent='Ingresá tu email';err.classList.add('vis');return;}
+  try{
+    await fetch(API+'/portal/solicitar-reset',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email})});
+    // Siempre mostrar ok para no revelar si el email existe
+    ok.textContent='✓ Si el email está registrado, te enviamos un link para cambiar tu contraseña. Revisá tu casilla.';
+    ok.classList.add('vis');
+  }catch(e){err.textContent='Error al enviar. Intentá de nuevo.';err.classList.add('vis');}
+}
+
+// Reset password via token (cuando viene desde el email)
+async function resetConToken(token){
+  switchAuth('reset');
+  document.getElementById('rst-token').value=token;
+}
+
+async function aplicarReset(){
+  const token=document.getElementById('rst-token').value;
+  const pwd=document.getElementById('rst-pwd').value;
+  const pwd2=document.getElementById('rst-pwd2').value;
+  const err=document.getElementById('rst-err'),ok=document.getElementById('rst-ok');
+  err.classList.remove('vis');ok.classList.remove('vis');
+  if(!pwd||!pwd2){err.textContent='Completá los campos';err.classList.add('vis');return;}
+  if(pwd.length<6){err.textContent='Mínimo 6 caracteres';err.classList.add('vis');return;}
+  if(pwd!==pwd2){err.textContent='Las contraseñas no coinciden';err.classList.add('vis');return;}
+  try{
+    const r=await fetch(API+'/portal/reset-password',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({token,password_nuevo:pwd})});
+    const d=await r.json();if(!r.ok) throw new Error(d.error||'Error');
+    ok.classList.add('vis');
+    setTimeout(()=>switchAuth('login'),2200);
+  }catch(e){err.textContent=e.message;err.classList.add('vis');}
+}
+
+function logout(){sessionStorage.removeItem('el_me');ME=null;document.getElementById('app').style.display='none';document.getElementById('auth').style.display='flex';document.getElementById('l-pwd').value='';}
+
+async function mostrarApp(){
+  document.getElementById('auth').style.display='none';
+  document.getElementById('app').style.display='block';
+  document.getElementById('hn').textContent=`${ME.nombre} ${ME.apellido}`;
+  await Promise.all([cargarPerfil(),cargarHistorial(),cargarSuscripciones(),cargarSocios()]);
+}
+
+async function cargarPerfil(){
+  const {perfil}=await fetch(`${API}/portal/perfil?donante_id=${ME.id}`).then(r=>r.json());
+  if(!perfil)return;
+  document.getElementById('pav').textContent=(perfil.nombre[0]+perfil.apellido[0]).toUpperCase();
+  document.getElementById('pid').textContent=perfil.donante_id;
+  document.getElementById('pnm').textContent=`${perfil.nombre} ${perfil.apellido}`;
+  document.getElementById('pem').textContent=perfil.email;
+  document.getElementById('ptotal').textContent='$'+fmt(perfil.total_donado||0);
+  document.getElementById('ppagos').textContent=perfil.cantidad_pagos||0;
+  document.getElementById('u-nom').value=perfil.nombre;
+  document.getElementById('u-ape').value=perfil.apellido;
+  document.getElementById('u-cel').value=perfil.celular||'';
+}
+
+async function cargarHistorial(){
+  const d=await fetch(`${API}/portal/historial?donante_id=${ME.id}`).then(r=>r.json());
+  const el=document.getElementById('hist-list');
+  const ps=[...(d.pagos||[]).map(p=>({...p,_t:'p'})),...(d.donaciones_manuales||[]).map(x=>({...x,_t:'m'}))];
+  ps.sort((a,b)=>new Date(b.created_at||b.fecha+'T00:00')-new Date(a.created_at||a.fecha+'T00:00'));
+  if(!ps.length){el.innerHTML='<div class="empty">No tenés pagos registrados aún.</div>';return;}
+  el.innerHTML=ps.map(p=>p._t==='p'
+    ?`<div class="hi"><div><div class="ht">${x(p.titulo||'Pago')}</div><div class="hs">${x(p.link_id||'')} <span class="badge ${p.estado}">${p.estado}</span></div></div><div style="text-align:right"><div class="hm">$${fmt(p.monto)}</div><div class="hf">${fd(p.created_at)}</div></div></div>`
+    :`<div class="hi"><div><div class="ht">${x(p.concepto||'Donación')}</div><div class="hs">${x(p.metodo||'')}${p.campana?' · '+x(p.campana):''}</div></div><div style="text-align:right"><div class="hm">$${fmt(p.monto)}</div><div class="hf">${p.fecha||'—'}</div></div></div>`
+  ).join('');
+}
+
+async function cargarSuscripciones(){
+  const d=await fetch(`${API}/portal/historial?donante_id=${ME.id}`).then(r=>r.json());
+  const el=document.getElementById('susc-list');
+  const ss=d.suscripciones||[];
+  if(!ss.length){el.innerHTML='<div class="empty">No tenés suscripciones activas.</div>';return;}
+  el.innerHTML=ss.map(s=>`<div class="sc">
+    <div class="sc-top"><div class="sc-tier" style="color:${s.tiers_partner?.color||'var(--go)'}">${x(s.tiers_partner?.nombre||'Partner')}</div><span class="sc-est ${s.estado}">${s.estado}</span></div>
+    <div class="sc-monto">$${fmt(s.monto_mensual)}/mes</div>
+    <div class="sc-info">Desde ${fd2(s.fecha_inicio)}</div>
+    ${s.estado==='activo'?`<div style="margin-top:.65rem"><button class="btn btn-dan btn-sm" onclick="cancelarSusc('${s.id}')">Cancelar suscripción</button></div>`:''}
+  </div>`).join('');
+}
+
+async function cargarSocios(){
+  const[rp,rt]=await Promise.all([fetch(API+'/partners/publicos').then(r=>r.json()),fetch(API+'/tiers').then(r=>r.json())]);
+  const ps=rp.partners||[];
+  const el=document.getElementById('socios-list');
+  if(!ps.length){el.innerHTML='<div class="empty">Aún no hay socios públicos.</div>';return;}
+  const byT={};
+  ps.forEach(p=>{const t=p.tier||'Sin tier';if(!byT[t])byT[t]={color:p.color||'#C9974A',items:[]};byT[t].items.push(p);});
+  el.innerHTML=Object.entries(byT).map(([t,{color,items}])=>`<div class="tier-block">
+    <div class="tier-hdr"><div class="tier-dot" style="background:${color}"></div><span class="tier-n">${x(t)}</span><span class="tier-cnt">${items.length} socio${items.length!==1?'s':''}</span></div>
+    <div class="chips">${items.map(s=>`<span class="chip" style="color:${color};border-color:${color}44;background:${color}11">⭐ ${x(s.nombre)}${s.monto?' · $'+fmt(s.monto)+'/mes':''}</span>`).join('')}</div>
+  </div>`).join('');
+}
+
+async function guardarDatos(){
+  try{
+    const r=await fetch(API+'/portal/actualizar-datos',{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify({donante_id:ME.id,nombre:document.getElementById('u-nom').value.trim(),apellido:document.getElementById('u-ape').value.trim(),celular:document.getElementById('u-cel').value.trim()})});
+    if(!r.ok) throw new Error();
+    flash('datos-ok','datos-err');cargarPerfil();
+  }catch(e){flash('datos-err','datos-ok','Error al guardar');}
+}
+
+async function cambiarPwd(){
+  const act=document.getElementById('pwd-act').value,nw=document.getElementById('pwd-new').value,con=document.getElementById('pwd-con').value;
+  if(nw!==con){const el=document.getElementById('pwd-err');el.textContent='Las contraseñas no coinciden';el.classList.add('vis');return;}
+  try{
+    const r=await fetch(API+'/portal/cambiar-password',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({donante_id:ME.id,password_actual:act,password_nuevo:nw})});
+    if(!r.ok) throw new Error((await r.json()).error||'Error');
+    document.getElementById('pwd-act').value=document.getElementById('pwd-new').value=document.getElementById('pwd-con').value='';
+    flash('pwd-ok','pwd-err');
+  }catch(e){const el=document.getElementById('pwd-err');el.textContent=e.message;flash('pwd-err','pwd-ok');}
+}
+
+async function cancelarSusc(id){
+  if(!confirm('¿Cancelar esta suscripción?'))return;
+  await fetch(`${API}/portal/cancelar-suscripcion/${id}`,{method:'POST'});
+  cargarSuscripciones();
+}
+
+function goTab(n){
+  const ns=['perfil','historial','suscripciones','socios','seguridad'];
+  document.querySelectorAll('.tab').forEach((t,i)=>t.classList.toggle('on',ns[i]===n));
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('on'));
+  document.getElementById('panel-'+n).classList.add('on');
+}
+
+function flash(ok,err,msg){
+  const oel=document.getElementById(ok),eel=document.getElementById(err);
+  if(msg){eel.textContent=msg;eel.classList.add('vis');oel.classList.remove('vis');setTimeout(()=>eel.classList.remove('vis'),3e3);}
+  else{oel.classList.add('vis');eel.classList.remove('vis');setTimeout(()=>oel.classList.remove('vis'),3e3);}
+}
+
+const fmt=n=>new Intl.NumberFormat('es-AR').format(Math.round(n||0));
+const x=s=>String(s||'').replace(/[<>&"]/g,c=>({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'}[c]));
+const fd=s=>{if(!s)return'—';try{return new Date(s).toLocaleString('es-AR',{day:'2-digit',month:'2-digit',year:'2-digit',hour:'2-digit',minute:'2-digit'})}catch(e){return s;}};
+const fd2=s=>{if(!s)return'—';try{return new Date(s).toLocaleDateString('es-AR',{day:'2-digit',month:'2-digit',year:'numeric'})}catch(e){return s;}};
+
+const saved=sessionStorage.getItem('el_me');
+if(saved){ME=JSON.parse(saved);mostrarApp();}
+// Auto-detectar token de reset en la URL
+const resetToken=new URLSearchParams(location.search).get('reset');
+if(resetToken) resetConToken(resetToken);
+</script>
+</body></html>

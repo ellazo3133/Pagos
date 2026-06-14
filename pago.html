@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="192x192" href="https://static.wixstatic.com/media/7e0273_7c59cd7dae1b4f9a8cd65670f2e4951b~mv2.png/v1/fill/w_192,h_192,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/logo.png"/>
+  <link rel="shortcut icon" href="https://static.wixstatic.com/media/7e0273_7c59cd7dae1b4f9a8cd65670f2e4951b~mv2.png/v1/fill/w_192,h_192,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/logo.png"/>
+  <link rel="apple-touch-icon" href="https://static.wixstatic.com/media/7e0273_7c59cd7dae1b4f9a8cd65670f2e4951b~mv2.png/v1/fill/w_192,h_192,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/logo.png"/>
+  <!-- WhatsApp / Redes sociales -->
+  <meta name="description" content="Apoyá a nuestra comunidad. Cada aporte hace la diferencia."/>
+  <meta property="og:site_name" content="El Lazo · Juventud Judía"/>
+  <meta property="og:title" content="El Lazo · Juventud Judía"/>
+  <meta property="og:description" content="Apoyá a nuestra comunidad. Cada aporte hace la diferencia."/>
+  <meta property="og:image" content="https://static.wixstatic.com/media/7e0273_7c59cd7dae1b4f9a8cd65670f2e4951b~mv2.png/v1/fill/w_1200,h_630,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/logo.png"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://pagos.ellazo.com.ar"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="El Lazo · Juventud Judía"/>
+  <meta name="twitter:description" content="Apoyá a nuestra comunidad. Cada aporte hace la diferencia."/>
+  <meta name="twitter:image" content="https://static.wixstatic.com/media/7e0273_7c59cd7dae1b4f9a8cd65670f2e4951b~mv2.png/v1/fill/w_1200,h_630,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/logo.png"/>
+<title>El Lazo · Pago</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--cr:#FAF7F2;--dk:#F2EDE4;--ink:#1A1612;--so:#4A4440;--mu:#8A817A;--go:#C9974A;--gl:#E8C080;--gp:#FDF5E6;--ok:#2E7D52;--er:#C0392B;--bd:#E0D8CF;--r:14px}
+body{font-family:'Poppins',sans-serif;background:var(--cr);color:var(--ink);min-height:100vh}
+.hdr{background:var(--ink);padding:1rem 1.5rem;display:flex;align-items:center;justify-content:space-between}
+.logo{height:40px;object-fit:contain}
+.back{color:rgba(255,255,255,.55);font-size:.82rem;text-decoration:none}
+.back:hover{color:var(--gl)}
+.hero-img{width:100%;height:195px;object-fit:cover;display:block}
+.wrap{max-width:520px;margin:0 auto;padding:2rem 1.25rem 3rem}
+.ci{margin-bottom:1.75rem}
+.c-org{font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--go);margin-bottom:.25rem}
+.c-titulo{font-family:'Oswald',sans-serif;font-size:1.65rem;font-weight:700;line-height:1.2;margin-bottom:.45rem}
+.c-desc{font-size:.88rem;color:var(--mu);line-height:1.65}
+.slbl{font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--mu);margin-bottom:.85rem;display:flex;align-items:center;gap:.5rem}
+.slbl::after{content:'';flex:1;height:1px;background:var(--bd)}
+.tipo-tabs{display:flex;gap:.5rem;margin-bottom:1.4rem}
+.ttab{flex:1;padding:.65rem;border:1.5px solid var(--bd);background:white;border-radius:10px;text-align:center;font-size:.84rem;font-weight:600;cursor:pointer;color:var(--mu);transition:all .15s}
+.ttab.on{border-color:var(--go);background:var(--gp);color:var(--ink)}
+.mg{display:grid;grid-template-columns:repeat(auto-fill,minmax(115px,1fr));gap:.55rem;margin-bottom:1.2rem}
+.mb{padding:.85rem .5rem;border:1.5px solid var(--bd);background:white;border-radius:var(--r);text-align:center;cursor:pointer;transition:all .15s;font-family:'Poppins',sans-serif}
+.mb:hover{border-color:var(--go)}
+.mb.on{border-color:var(--go);background:var(--gp)}
+.mb .ml{font-size:.7rem;color:var(--mu);margin-bottom:.12rem}
+.mb .mv{font-family:'Oswald',sans-serif;font-size:1.2rem;font-weight:700}
+.mb.on .mv{color:var(--go)}
+/* OTRO MONTO */
+.otro-w{margin-bottom:1.4rem;position:relative}
+.otro-w input{width:100%;border:1.5px solid var(--bd);background:white;border-radius:var(--r);padding:.85rem 1rem .85rem 1.8rem;font-family:'Poppins',sans-serif;font-size:1.05rem;color:var(--ink);outline:none}
+.otro-w input:focus{border-color:var(--go)}
+.otro-w input.err-border{border-color:var(--er)}
+.otro-w .si{position:absolute;left:.8rem;top:50%;transform:translateY(-50%);color:var(--mu)}
+.otro-min-msg{font-size:.78rem;color:var(--er);font-weight:600;margin-top:.35rem;display:none}
+.otro-min-msg.vis{display:block}
+.mes-sel{width:100%;border:1.5px solid var(--bd);border-radius:var(--r);padding:.75rem 1rem;font-size:.92rem;font-family:'Poppins',sans-serif;color:var(--ink);background:white;outline:none;margin-bottom:1.2rem}
+.mes-sel:focus{border-color:var(--go)}
+.fg{margin-bottom:.75rem}
+.fg label{font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--mu);display:block;margin-bottom:.32rem}
+.fg input,.fg textarea,.fg select{width:100%;border:1.5px solid var(--bd);background:white;border-radius:10px;padding:.75rem 1rem;font-family:'Poppins',sans-serif;font-size:.92rem;color:var(--ink);outline:none}
+.fg input:focus,.fg textarea:focus{border-color:var(--go)}
+.fg textarea{resize:vertical;min-height:68px}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:.65rem}
+.anon-w{background:var(--dk);border-radius:10px;padding:.82rem 1rem;margin-bottom:1.2rem}
+.anon-l{display:flex;align-items:center;gap:.65rem;cursor:pointer;font-size:.88rem;color:var(--so)}
+.anon-l input[type=checkbox]{width:18px;height:18px;accent-color:var(--go);cursor:pointer;flex-shrink:0}
+.res{background:white;border:1px solid var(--bd);border-radius:var(--r);padding:1.15rem 1.25rem;margin-bottom:1.2rem}
+.res-r{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem}
+.res-t{font-weight:600;font-size:.88rem}
+.res-s{font-size:.73rem;color:var(--go);margin-top:.1rem}
+.res-m{font-family:'Oswald',sans-serif;font-size:1.55rem;font-weight:700;color:var(--go);text-align:right}
+.res-sub{font-size:.7rem;color:var(--mu);text-align:right;margin-top:.1rem}
+.btn-mp{width:100%;padding:.92rem;background:#009ee3;color:white;border:none;border-radius:12px;font-size:1rem;font-weight:700;cursor:pointer;margin-bottom:.6rem;font-family:'Poppins',sans-serif;display:flex;align-items:center;justify-content:center;gap:.5rem}
+.btn-mp:hover{opacity:.9}
+.btn-mp:disabled{opacity:.5;cursor:not-allowed}
+.btn-qr{width:100%;padding:.82rem;background:white;border:1.5px solid var(--bd);border-radius:12px;font-size:.92rem;font-weight:600;cursor:pointer;font-family:'Poppins',sans-serif;display:flex;align-items:center;justify-content:center;gap:.5rem;color:var(--ink);transition:all .15s}
+.btn-qr:not(:disabled):hover{border-color:var(--go);color:var(--go)}
+.btn-qr:disabled{opacity:.35;cursor:not-allowed}
+.qr-hint{text-align:center;font-size:.72rem;color:var(--mu);margin-top:.35rem}
+.seg{text-align:center;font-size:.72rem;color:var(--mu);margin-top:.5rem}
+.qr-bg{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:999;display:none;align-items:center;justify-content:center;padding:1rem}
+.qr-bg.open{display:flex}
+.qr-box{background:white;border-radius:20px;padding:2rem;max-width:360px;width:100%;text-align:center}
+.qr-box h3{font-family:'Oswald',sans-serif;font-size:1.2rem;margin-bottom:.4rem}
+.qr-box p{font-size:.84rem;color:var(--mu);margin-bottom:1.2rem}
+.qr-box img{width:195px;height:195px;margin:0 auto .4rem;display:block;border:2px solid var(--bd);border-radius:12px}
+.alias{font-size:1rem;font-weight:700;color:var(--go);margin-bottom:1.2rem}
+.btn-conf{width:100%;padding:.85rem;background:var(--ok);color:white;border:none;border-radius:10px;font-size:.92rem;font-weight:700;cursor:pointer;font-family:'Poppins',sans-serif}
+.btn-conf:hover{opacity:.9}
+.btn-can{width:100%;padding:.65rem;background:none;border:none;font-size:.8rem;color:var(--mu);cursor:pointer;margin-top:.4rem;font-family:'Poppins',sans-serif}
+.est{text-align:center;padding:3rem 1.5rem;display:none}
+.est.show{display:block}
+.est-ic{font-size:3rem;margin-bottom:.85rem}
+.est-t{font-family:'Oswald',sans-serif;font-size:1.45rem;margin-bottom:.45rem}
+.est-s{color:var(--mu);font-size:.88rem;margin-bottom:1.4rem}
+.btn-v{display:inline-block;padding:.75rem 1.75rem;background:var(--ink);color:white;border-radius:10px;text-decoration:none;font-weight:600;font-size:.88rem}
+.nf{text-align:center;padding:3rem 1.5rem}
+.nf h2{font-family:'Oswald',sans-serif;font-size:1.35rem;margin-bottom:.45rem}
+.nf p{color:var(--mu);margin-bottom:1.4rem}
+@keyframes spin{to{transform:rotate(360deg)}}
+.ld{width:32px;height:32px;border:3px solid var(--bd);border-top-color:var(--go);border-radius:50%;animation:spin .7s linear infinite;margin:3rem auto}
+@media(max-width:390px){.frow{grid-template-columns:1fr}.mg{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+<div class="qr-bg" id="qr-bg">
+  <div class="qr-box">
+    <h3>Pagá por transferencia</h3>
+    <p>Escaneá el QR con tu app de Mercado Pago o usá el alias:</p>
+    <img src="https://api.qrserver.com/v1/create-qr-code/?size=195x195&data=https://mpago.la/1mNkSVG" alt="QR MP"/>
+    <div class="alias">ellazo.mp</div>
+    <button class="btn-conf" id="btn-conf-qr">Ya realicé la transferencia</button>
+    <button class="btn-can" onclick="cerrarQR()">Cancelar</button>
+  </div>
+</div>
+<header class="hdr">
+  <img class="logo" src="https://static.wixstatic.com/media/7e0273_7c59cd7dae1b4f9a8cd65670f2e4951b~mv2.png/v1/crop/x_93,y_0,w_1589,h_834/fill/w_210,h_110,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/logo.png" alt="El Lazo"/>
+  <a class="back" href="/index.html">← Volver</a>
+</header>
+<div id="ld"><div class="ld"></div></div>
+<div class="nf" id="nf" style="display:none">
+  <h2>Campaña no encontrada</h2><p>El link no existe o fue desactivado.</p>
+  <a href="/index.html" style="display:inline-block;padding:.75rem 1.75rem;background:var(--ink);color:white;border-radius:10px;text-decoration:none;font-weight:600">Ver campañas →</a>
+</div>
+<div class="est" id="est-ok"><div class="est-ic">🎉</div><div class="est-t">¡Gracias por tu apoyo!</div><div class="est-s">Tu pago fue procesado. ¡El Lazo te agradece!</div><a class="btn-v" href="/index.html">Ver más campañas</a></div>
+<div class="est" id="est-pend"><div class="est-ic">⏳</div><div class="est-t">Pago pendiente</div><div class="est-s">Tu pago está en proceso. Te avisaremos cuando se confirme.</div><a class="btn-v" href="/index.html">Volver</a></div>
+<div class="est" id="est-er"><div class="est-ic">❌</div><div class="est-t">Pago no procesado</div><div class="est-s">Hubo un problema. Podés intentarlo de nuevo.</div><a class="btn-v" href="/index.html">Volver</a></div>
+<div class="est" id="est-qr"><div class="est-ic">✅</div><div class="est-t">¡Transferencia registrada!</div><div class="est-s">Verificaremos tu pago y te confirmaremos pronto. ¡Gracias!</div><a class="btn-v" href="/index.html">Ver campañas</a></div>
+
+<div id="form-wrap" style="display:none">
+  <img id="hero-img" class="hero-img" style="display:none"/>
+  <div class="wrap">
+    <div class="ci">
+      <div class="c-org" id="c-org"></div>
+      <div class="c-titulo" id="c-titulo"></div>
+      <div class="c-desc" id="c-desc"></div>
+    </div>
+    <div class="slbl">Seleccioná el monto</div>
+    <div id="tipo-wrap" style="display:none">
+      <div class="tipo-tabs">
+        <div class="ttab on" id="tab-u" onclick="setTipo('unico')">Pago único</div>
+        <div class="ttab" id="tab-s" onclick="setTipo('suscripcion')">Suscripción mensual</div>
+      </div>
+    </div>
+    <div class="mg" id="mg"></div>
+    <div class="otro-w" id="otro-w" style="display:none">
+      <div style="font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--mu);margin-bottom:.38rem">Otro monto <span id="otro-min-lbl" style="font-weight:400;text-transform:none;letter-spacing:0;color:var(--mu)"></span></div>
+      <div style="position:relative">
+        <span class="si">$</span>
+        <input type="number" id="otro-i" placeholder="Escribí el monto" min="1" oninput="setOtro()"/>
+      </div>
+      <div class="otro-min-msg" id="otro-min-msg"></div>
+    </div>
+    <div id="mes-wrap" style="display:none">
+      <div class="slbl" style="margin-bottom:.6rem">Duración</div>
+      <select class="mes-sel" id="mes-sel" onchange="upd()"></select>
+    </div>
+    <div class="slbl">Tus datos</div>
+    <div class="frow">
+      <div class="fg"><label>Nombre *</label><input type="text" id="f-nom" oninput="chk()"/></div>
+      <div class="fg"><label>Apellido *</label><input type="text" id="f-ape" oninput="chk()"/></div>
+    </div>
+    <div class="fg"><label>Email *</label><input type="email" id="f-email" oninput="chk()"/></div>
+    <div class="fg"><label>Celular (opcional)</label><input type="tel" id="f-cel"/></div>
+    <div class="fg"><label>Comentario (opcional)</label><textarea id="f-com" placeholder="Dejá un mensaje..."></textarea></div>
+    <div id="campos-extra"></div>
+    <div class="anon-w" id="anon-w" style="display:none">
+      <label class="anon-l"><input type="checkbox" id="anonimo"/>Quiero que mi donación sea anónima</label>
+    </div>
+    <div class="slbl">Resumen</div>
+    <div class="res">
+      <div class="res-r">
+        <div><div class="res-t" id="r-t"></div><div class="res-s" id="r-s"></div></div>
+        <div><div class="res-m" id="r-m">$—</div><div class="res-sub" id="r-sub"></div></div>
+      </div>
+    </div>
+    <button class="btn-mp" id="btn-mp" onclick="pagarMP()">💳 <span id="btn-mp-txt">Pagar con Mercado Pago →</span></button>
+    <button class="btn-qr" id="btn-qr" onclick="abrirQR()" disabled>📱 Abonar con QR / Transferencia</button>
+    <div class="qr-hint" id="qr-hint">Completá nombre, apellido y email para habilitar esta opción</div>
+    <div class="seg">🔒 Pago seguro procesado por Mercado Pago</div>
+  </div>
+</div>
+
+<script>
+const API='https://nhmaciyqffgjumatgtfh.supabase.co/functions/v1/mp-pagos';
+let CFG=null,monto=0,tipo='unico',campos=[],minimo=0;
+const _qs=new URLSearchParams(location.search).get('s');
+const _pn=location.pathname.replace(/^\/+/,'').replace(/\.html.*/,'');
+const slug=_qs||(_pn&&!['','home','admin','mi-cuenta','pago','index'].includes(_pn)?_pn:null);
+const status=new URLSearchParams(location.search).get('status');
+
+async function init(){
+  if(status){
+    document.getElementById('ld').style.display='none';
+    if(status==='success'||status==='approved') sh('est-ok');
+    else if(status==='pending') sh('est-pend');
+    else sh('est-er');
+    return;
+  }
+  if(!slug){location.replace('/index.html');return;}
+  try{
+    const[rc,rcc]=await Promise.all([
+      fetch(`${API}/campana/${slug}`),
+      fetch(`${API}/campos-custom`),
+    ]);
+    if(!rc.ok){nf();return;}
+    CFG=(await rc.json()).campana;
+    campos=((await rcc.json()).campos||[]).filter(c=>c.en_formulario);
+    render();
+  }catch(e){nf();}
+}
+function nf(){document.getElementById('ld').style.display='none';document.getElementById('nf').style.display='block';}
+function sh(id){document.getElementById(id).classList.add('show');}
+
+function render(){
+  document.getElementById('ld').style.display='none';
+  document.getElementById('form-wrap').style.display='block';
+  document.title='El Lazo · '+CFG.titulo;
+  // Update social meta for this campaign
+  document.querySelector('meta[property="og:title"]')?.setAttribute('content','El Lazo · '+CFG.titulo);
+  document.querySelector('meta[property="og:description"]')?.setAttribute('content',CFG.descripcion||'Apoyá a nuestra comunidad.');
+  if(CFG.imagen_url){
+    document.querySelector('meta[property="og:image"]')?.setAttribute('content',CFG.imagen_url);
+    document.querySelector('meta[name="twitter:image"]')?.setAttribute('content',CFG.imagen_url);
+  }
+  if(CFG.imagen_url){const i=document.getElementById('hero-img');i.src=CFG.imagen_url;i.style.display='block';}
+  document.getElementById('c-org').textContent=CFG.org||'El Lazo';
+  document.getElementById('c-titulo').textContent=CFG.titulo;
+  document.getElementById('c-desc').textContent=CFG.descripcion||'';
+  minimo=Number(CFG.monto_minimo||0);
+  if(CFG.tipo_pago==='ambos') document.getElementById('tipo-wrap').style.display='block';
+  else tipo=CFG.tipo_pago==='suscripcion'?'suscripcion':'unico';
+  renderMontos();
+  const ms=CFG.meses_opciones||[3,6,12];
+  document.getElementById('mes-sel').innerHTML=ms.map(m=>`<option value="${m}">${m} meses</option>`).join('');
+  if(CFG.mostrar_donantes===true) document.getElementById('anon-w').style.display='block';
+  if(CFG.otro_monto) document.getElementById('otro-w').style.display='block';
+  if(minimo>0){
+    document.getElementById('otro-i').min=minimo;
+    document.getElementById('otro-min-lbl').textContent='— mínimo $'+fmt(minimo);
+  }
+  if(campos.length){
+    document.getElementById('campos-extra').innerHTML=campos.map(c=>`<div class="fg"><label>${x(c.etiqueta)}${c.requerido?' *':''}</label>${
+      c.tipo==='opciones'?`<select id="ce_${c.id}"><option value="">Elegí...</option>${(c.opciones||[]).map(o=>`<option value="${x(o)}">${x(o)}</option>`).join('')}</select>`:
+      `<input type="${c.tipo==='numero'?'number':c.tipo==='fecha'?'date':'text'}" id="ce_${c.id}"/>`
+    }</div>`).join('');
+  }
+  document.getElementById('r-t').textContent=CFG.titulo;
+  upd();chk();
+}
+
+function renderMontos(){
+  const ms=CFG.montos||[];
+  document.getElementById('mg').innerHTML=ms.map((m,i)=>`
+    <div class="mb${i===0?' on':''}" onclick="selM(this,${m.valor||m.monto||m})">
+      ${m.label?`<div class="ml">${x(m.label)}</div>`:''}
+      <div class="mv">$${fmt(m.valor||m.monto||m)}</div>
+    </div>`).join('');
+  if(ms.length) monto=ms[0].valor||ms[0].monto||ms[0];
+  if(tipo==='suscripcion'){
+    document.getElementById('mes-wrap').style.display='block';
+    document.getElementById('btn-mp-txt').textContent='Suscribirme con Mercado Pago →';
+  }
+  upd();
+}
+
+function setTipo(t){
+  tipo=t;
+  document.getElementById('tab-u').classList.toggle('on',t==='unico');
+  document.getElementById('tab-s').classList.toggle('on',t==='suscripcion');
+  document.getElementById('mes-wrap').style.display=t==='suscripcion'?'block':'none';
+  document.getElementById('btn-mp-txt').textContent=t==='suscripcion'?'Suscribirme con Mercado Pago →':'Pagar con Mercado Pago →';
+  upd();
+}
+
+function selM(el,v){
+  document.querySelectorAll('.mb').forEach(b=>b.classList.remove('on'));
+  el.classList.add('on'); monto=v;
+  document.getElementById('otro-i').value='';
+  document.getElementById('otro-min-msg').classList.remove('vis');
+  document.getElementById('otro-i').classList.remove('err-border');
+  upd();
+}
+
+function setOtro(){
+  document.querySelectorAll('.mb').forEach(b=>b.classList.remove('on'));
+  const val=Number(document.getElementById('otro-i').value)||0;
+  const msgEl=document.getElementById('otro-min-msg');
+  const inp=document.getElementById('otro-i');
+  if(minimo>0 && val>0 && val<minimo){
+    // Show minimum warning but DON'T set monto yet
+    msgEl.textContent=`El monto mínimo es $${fmt(minimo)}`;
+    msgEl.classList.add('vis');
+    inp.classList.add('err-border');
+    monto=0; // block payment
+  }else{
+    msgEl.classList.remove('vis');
+    inp.classList.remove('err-border');
+    monto=val;
+  }
+  upd();
+}
+
+function upd(){
+  document.getElementById('r-m').textContent=monto?'$'+fmt(monto):'$—';
+  const mes=parseInt(document.getElementById('mes-sel')?.value||'1');
+  const ms=CFG?.montos||[];
+  document.getElementById('r-s').textContent=(ms.find(m=>(m.valor||m.monto||m)===monto)?.label)||'';
+  document.getElementById('r-sub').textContent=tipo==='suscripcion'&&monto&&mes?`por mes · ${mes} meses = $${fmt(monto*mes)}`:'';
+  chk();
+}
+
+function chk(){
+  const ok=document.getElementById('f-nom')?.value.trim()&&
+            document.getElementById('f-ape')?.value.trim()&&
+            document.getElementById('f-email')?.value.trim()&&
+            monto>0;
+  document.getElementById('btn-qr').disabled=!ok;
+  document.getElementById('qr-hint').style.display=ok?'none':'block';
+}
+
+function payload(){
+  const nom=document.getElementById('f-nom').value.trim();
+  const ape=document.getElementById('f-ape').value.trim();
+  const email=document.getElementById('f-email').value.trim();
+  if(!nom||!ape||!email){alert('Completá nombre, apellido y email.');return null;}
+  if(!monto||monto<1){alert('Seleccioná un monto válido.');return null;}
+  if(minimo>0&&monto<minimo){alert(`El monto mínimo es $${fmt(minimo)}.`);return null;}
+  const ce={};
+  for(const c of campos){
+    const el=document.getElementById(`ce_${c.id}`);
+    if(!el) continue;
+    if(c.requerido&&!el.value){alert(`El campo "${c.etiqueta}" es obligatorio.`);return null;}
+    if(el.value) ce[c.nombre]=el.value;
+  }
+  const ms=CFG.montos||[];
+  return{nombre:nom,apellido:ape,email,celular:document.getElementById('f-cel').value.trim(),monto,titulo:CFG.titulo,titulo_monto:(ms.find(m=>(m.valor||m.monto||m)===monto)?.label)||'',link_id:CFG.slug,comentario:document.getElementById('f-com').value.trim(),anonimo:document.getElementById('anonimo')?.checked||false,campos_extra:ce};
+}
+
+async function pagarMP(){
+  const p=payload();if(!p)return;
+  const btn=document.getElementById('btn-mp');btn.disabled=true;
+  try{
+    if(tipo==='suscripcion'){
+      const mes=parseInt(document.getElementById('mes-sel').value);
+      const r=await fetch(API+'/crear-suscripcion',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({...p,meses:mes})});
+      const d=await r.json();if(!r.ok) throw new Error(d.error||'Error');
+      location.href=d.init_point;
+    }else{
+      const r=await fetch(API+'/crear-preferencia',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(p)});
+      const d=await r.json();if(!r.ok) throw new Error(d.error||'Error');
+      location.href=d.init_point;
+    }
+  }catch(e){alert('Error: '+e.message);btn.disabled=false;}
+}
+
+async function abrirQR(){
+  if(document.getElementById('btn-qr').disabled)return;
+  const p=payload();if(!p)return;
+  // Registrar transferencia al abrir el QR (no esperar confirmación)
+  const btn=document.getElementById('btn-qr');
+  btn.disabled=true;
+  btn.textContent='Registrando...';
+  try{
+    const mes=tipo==='suscripcion'?parseInt(document.getElementById('mes-sel').value):null;
+    const r=await fetch(API+'/registrar-transferencia',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({...p,tipo_pago:tipo,meses:mes})});
+    if(!r.ok) throw new Error((await r.json()).error||'Error');
+    // Mostrar QR
+    document.getElementById('qr-bg').classList.add('open');
+  }catch(e){
+    alert('Error: '+e.message);
+    btn.disabled=false;
+    btn.innerHTML='📱 Abonar con QR / Transferencia';
+  }
+}
+function cerrarQR(){document.getElementById('qr-bg').classList.remove('open');}
+
+document.getElementById('btn-conf-qr').onclick=()=>{
+  // El formulario ya fue enviado al abrir el QR — solo mostrar éxito
+  cerrarQR();
+  document.getElementById('form-wrap').style.display='none';
+  sh('est-qr');
+};
+
+const fmt=n=>new Intl.NumberFormat('es-AR').format(Math.round(n||0));
+const x=s=>String(s||'').replace(/[<>&"]/g,c=>({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'}[c]));
+init();
+</script>
+</body></html>

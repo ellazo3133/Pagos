@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>El Lazo</title>
+<link rel="icon" type="image/png" href="https://static.wixstatic.com/media/7e0273_7c59cd7dae1b4f9a8cd65670f2e4951b~mv2.png/v1/fill/w_192,h_192,al_c,q_85,enc_avif,quality_auto/logo.png"/>
+<meta property="og:title" content="El Lazo · Juventud Judía"/>
+<meta property="og:description" content="Apoyá a nuestra comunidad. Cada aporte hace la diferencia."/>
+<meta property="og:image" content="https://static.wixstatic.com/media/7e0273_7c59cd7dae1b4f9a8cd65670f2e4951b~mv2.png/v1/fill/w_1200,h_630,al_c,q_85,enc_avif,quality_auto/logo.png"/>
+<meta property="og:type" content="website"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<style>body{margin:0;display:flex;align-items:center;justify-content:center;min-height:100vh;background:#FAF7F2}.sp{width:38px;height:38px;border:3px solid #E0D8CF;border-top-color:#C9974A;border-radius:50%;animation:s .7s linear infinite}@keyframes s{to{transform:rotate(360deg)}}</style>
+</head>
+<body><div class="sp"></div>
+<script>
+const p = location.pathname.replace(/\/+$/,'') || '/';
+if (p==='/' || p==='/home' || p==='/index.html') location.replace('/home.html');
+else if (p==='/mi-cuenta' || p==='/mi-cuenta.html') location.replace('/mi-cuenta.html');
+else if (p==='/admin' || p==='/admin.html') location.replace('/admin.html');
+else {
+  // Campaign slug — redirect to pago.html preserving slug in ?s=
+  const slug = p.replace(/^\//, '');
+  location.replace('/pago.html?s=' + encodeURIComponent(slug));
+}
+</script>
+</body></html>

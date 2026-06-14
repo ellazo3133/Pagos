@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="192x192" href="https://static.wixstatic.com/media/7e0273_7c59cd7dae1b4f9a8cd65670f2e4951b~mv2.png/v1/fill/w_192,h_192,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/logo.png"/>
+  <link rel="shortcut icon" href="https://static.wixstatic.com/media/7e0273_7c59cd7dae1b4f9a8cd65670f2e4951b~mv2.png/v1/fill/w_192,h_192,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/logo.png"/>
+  <link rel="apple-touch-icon" href="https://static.wixstatic.com/media/7e0273_7c59cd7dae1b4f9a8cd65670f2e4951b~mv2.png/v1/fill/w_192,h_192,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/logo.png"/>
+  <!-- WhatsApp / Redes sociales -->
+  <meta name="description" content="Apoyá a nuestra comunidad. Cada aporte hace la diferencia."/>
+  <meta property="og:site_name" content="El Lazo · Juventud Judía"/>
+  <meta property="og:title" content="El Lazo · Juventud Judía"/>
+  <meta property="og:description" content="Apoyá a nuestra comunidad. Cada aporte hace la diferencia."/>
+  <meta property="og:image" content="https://static.wixstatic.com/media/7e0273_7c59cd7dae1b4f9a8cd65670f2e4951b~mv2.png/v1/fill/w_1200,h_630,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/logo.png"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://pagos.ellazo.com.ar"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="El Lazo · Juventud Judía"/>
+  <meta name="twitter:description" content="Apoyá a nuestra comunidad. Cada aporte hace la diferencia."/>
+  <meta name="twitter:image" content="https://static.wixstatic.com/media/7e0273_7c59cd7dae1b4f9a8cd65670f2e4951b~mv2.png/v1/fill/w_1200,h_630,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/logo.png"/>
+<title>Admin · El Lazo</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--cream:#FAF7F2;--dk:#F2EDE4;--ink:#1A1612;--soft:#4A4440;--muted:#8A817A;--gold:#C9974A;--gl:#E8C080;--gp:#FDF5E6;--ok:#2E7D52;--er:#C0392B;--pend:#D68910;--bd:#E0D8CF;--bok:#E8F5EE;--ber:#FDECEA;--bw:#FEF9EC;--r:12px;--shadow:0 4px 20px rgba(0,0,0,.08)}
+body{font-family:'Poppins',sans-serif;background:var(--cream);color:var(--ink);min-height:100vh}
+/* LOGIN */
+.login-scr{position:fixed;inset:0;background:var(--ink);display:flex;align-items:center;justify-content:center;z-index:999}
+.login-box{background:#1a1714;border:1px solid #2e2a25;border-radius:18px;padding:2.5rem;width:100%;max-width:340px;text-align:center}
+.login-box h1{font-family:'Oswald',sans-serif;color:var(--gl);font-size:1.4rem;margin-bottom:.25rem}
+.login-box p{color:#8a817a;font-size:.82rem;margin-bottom:1.4rem}
+.login-box input{width:100%;background:#0f0e0d;border:1.5px solid #2e2a25;border-radius:10px;padding:.8rem 1rem;color:#e8e0d5;font-family:'Poppins',sans-serif;font-size:.95rem;outline:none;text-align:center;letter-spacing:.15em;margin-bottom:.75rem}
+.login-box input:focus{border-color:#c9974a}
+.login-box button{width:100%;padding:.85rem;background:#c9974a;color:#111;border:none;border-radius:10px;font-weight:700;font-size:1rem;cursor:pointer;font-family:'Poppins',sans-serif}
+.login-err{color:#e57373;font-size:.8rem;margin-top:.5rem;display:none}.login-err.vis{display:block}
+/* TOPBAR */
+.topbar{background:var(--ink);padding:1rem 1.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem}
+.topbar h1{font-family:'Oswald',sans-serif;color:white;font-size:1.15rem}
+.tb-right{display:flex;align-items:center;gap:.65rem}
+.btn-tb{padding:.4rem .85rem;border:1.5px solid rgba(255,255,255,.2);background:none;color:rgba(255,255,255,.65);border-radius:8px;font-size:.78rem;cursor:pointer;font-family:'Poppins',sans-serif;text-decoration:none;display:inline-block}
+.btn-tb:hover{border-color:var(--gl);color:var(--gl)}
+/* TABS */
+.tabs-wrap{background:white;border-bottom:2px solid var(--bd);padding:0 1.5rem;display:flex;overflow-x:auto;gap:0}
+.tab{padding:.8rem 1.2rem;font-size:.88rem;font-weight:600;color:var(--muted);cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;white-space:nowrap;transition:all .15s}
+.tab.on{color:var(--gold);border-bottom-color:var(--gold)}
+.wrap{max-width:1200px;margin:0 auto;padding:2rem 1.5rem}
+.panel{display:none}.panel.on{display:block}
+/* STATS ROW */
+.stats{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:.85rem;margin-bottom:2rem}
+.stat{background:white;border:1px solid var(--bd);border-radius:var(--r);padding:1rem 1.2rem}
+.stat-l{font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem}
+.stat-v{font-family:'Oswald',sans-serif;font-size:1.6rem;font-weight:700}
+.stat-v.g{color:var(--gold)}.stat-v.ok{color:var(--ok)}.stat-v.er{color:var(--er)}
+/* FILTROS */
+.filtros{display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:1.1rem;align-items:center}
+.filtros input,.filtros select{border:1.5px solid var(--bd);background:white;border-radius:9px;padding:.6rem .9rem;font-family:'Poppins',sans-serif;font-size:.87rem;color:var(--ink);outline:none}
+.filtros input{flex:1;min-width:160px}
+.filtros input:focus,.filtros select:focus{border-color:var(--gold)}
+/* TABLE */
+.tbl-wrap{background:white;border:1px solid var(--bd);border-radius:var(--r);overflow:auto}
+table{width:100%;border-collapse:collapse;min-width:580px}
+thead th{background:var(--dk);padding:.75rem 1rem;text-align:left;font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--bd);white-space:nowrap}
+tbody tr{border-bottom:1px solid var(--bd);transition:background .1s}
+tbody tr:last-child{border-bottom:none}
+tbody tr:hover{background:var(--cream)}
+tbody td{padding:.75rem 1rem;font-size:.86rem;color:var(--soft);vertical-align:middle}
+td.name{font-weight:600;color:var(--ink)}
+td.did{font-family:monospace;font-size:.8rem;color:var(--gold);font-weight:700}
+td.monto{font-family:'Oswald',sans-serif;font-size:1rem;font-weight:600;color:var(--ink)}
+.badge{display:inline-flex;align-items:center;gap:.2rem;padding:.15rem .55rem;border-radius:99px;font-size:.65rem;font-weight:700}
+.badge::before{content:'●';font-size:.35rem}
+.badge.aprobado{background:var(--bok);color:var(--ok)}
+.badge.rechazado{background:var(--ber);color:var(--er)}
+.badge.pendiente{background:var(--bw);color:var(--pend)}
+.empty{text-align:center;padding:2.5rem;color:var(--muted);font-style:italic}
+/* MODAL */
+.modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:100;display:none;align-items:flex-start;justify-content:center;padding:1rem;overflow-y:auto}
+.modal-bg.open{display:flex}
+.modal{background:white;border-radius:18px;padding:2rem;width:100%;max-width:600px;margin:auto}
+.modal h2{font-family:'Oswald',sans-serif;font-size:1.25rem;margin-bottom:1.3rem}
+.mfg{margin-bottom:.85rem}
+.mfg label{font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:.3rem}
+.mfg input,.mfg select,.mfg textarea{width:100%;border:1.5px solid var(--bd);background:var(--cream);border-radius:9px;padding:.7rem .9rem;font-family:'Poppins',sans-serif;font-size:.9rem;color:var(--ink);outline:none}
+.mfg input:focus,.mfg select:focus,.mfg textarea:focus{border-color:var(--gold);background:white}
+.mfg textarea{resize:vertical;min-height:55px}
+.mgrid{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
+.modal-actions{display:flex;gap:.75rem;justify-content:flex-end;margin-top:1.4rem;flex-wrap:wrap}
+/* CAMPAÑAS */
+.camps-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1rem;margin-bottom:2rem}
+.camp-card{background:white;border:1px solid var(--bd);border-radius:var(--r);overflow:hidden}
+.camp-card.inactiva{opacity:.65}
+.camp-img{width:100%;height:100px;object-fit:cover}
+.camp-body{padding:1rem}
+.camp-top{display:flex;gap:.5rem;margin-bottom:.4rem;flex-wrap:wrap}
+.camp-slug{font-family:monospace;font-size:.72rem;color:var(--gold);background:var(--gp);padding:.15rem .5rem;border-radius:6px}
+.camp-titulo{font-weight:700;font-size:.95rem;margin-bottom:.3rem}
+.camp-meta{font-size:.75rem;color:var(--muted);display:flex;gap:.75rem;flex-wrap:wrap;margin-bottom:.85rem}
+.camp-actions{display:flex;gap:.5rem;flex-wrap:wrap}
+/* DONANTES DRAWER */
+.drawer-bg{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:200;display:none}
+.drawer-bg.open{display:block}
+.drawer{position:fixed;right:0;top:0;bottom:0;width:100%;max-width:460px;background:white;z-index:201;overflow-y:auto;transform:translateX(100%);transition:transform .25s ease;box-shadow:-8px 0 32px rgba(0,0,0,.15)}
+.drawer.open{transform:translateX(0)}
+.drw-hdr{background:var(--ink);padding:1.4rem;color:white;display:flex;align-items:flex-start;justify-content:space-between;gap:1rem}
+.drw-close{border:none;background:none;color:rgba(255,255,255,.55);font-size:1.3rem;cursor:pointer;line-height:1}
+.drw-id{font-size:.65rem;font-weight:700;letter-spacing:.12em;color:var(--gl);text-transform:uppercase;margin-bottom:.2rem}
+.drw-nombre{font-family:'Oswald',sans-serif;font-size:1.3rem;font-weight:700}
+.drw-email{font-size:.8rem;color:rgba(255,255,255,.5);margin-top:.15rem}
+.drw-body{padding:1.4rem}
+.drw-stats{display:flex;gap:1.5rem;background:var(--dk);border-radius:var(--r);padding:1rem;margin-bottom:1.4rem}
+.dsv{font-family:'Oswald',sans-serif;font-size:1.3rem;font-weight:700;color:var(--gold)}
+.dsl{font-size:.65rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.drw-sec{margin-bottom:1.4rem}
+.drw-sec h3{font-family:'Oswald',sans-serif;font-size:.95rem;margin-bottom:.75rem;display:flex;align-items:center;gap:.4rem}
+.drw-sec h3::after{content:'';flex:1;height:1px;background:var(--bd)}
+.add-don{background:var(--dk);border-radius:var(--r);padding:.85rem;margin-top:.65rem}
+.add-don-grid{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin-bottom:.5rem}
+.add-don-grid input,.add-don-grid select{border:1.5px solid var(--bd);background:white;border-radius:8px;padding:.55rem .8rem;font-size:.84rem;font-family:'Poppins',sans-serif;color:var(--ink);outline:none;width:100%}
+.add-don-grid input:focus,.add-don-grid select:focus{border-color:var(--gold)}
+/* MONTO MONTOS */
+.montos-field{display:flex;flex-direction:column;gap:.4rem;margin-top:.35rem}
+.monto-row{display:grid;grid-template-columns:1fr 1fr auto;gap:.4rem;align-items:center}
+.monto-row input{border:1.5px solid var(--bd);background:var(--cream);border-radius:8px;padding:.55rem .8rem;font-size:.87rem;font-family:'Poppins',sans-serif;color:var(--ink);outline:none}
+.monto-row input:focus{border-color:var(--gold);background:white}
+.tipo-badge-dk{font-size:.65rem;font-weight:700;padding:.15rem .5rem;border-radius:99px}
+/* PARTNERS */
+.partner-card{background:white;border:1px solid var(--bd);border-radius:var(--r);padding:1rem;margin-bottom:.6rem;display:flex;align-items:center;gap:.75rem;flex-wrap:wrap}
+.pname{font-weight:600;font-size:.9rem;flex:1}
+.pmonto{font-family:'Oswald',sans-serif;font-size:1rem;font-weight:700;color:var(--gold)}
+.pest{display:inline-flex;padding:.15rem .55rem;border-radius:99px;font-size:.68rem;font-weight:700}
+.pest.activo{background:var(--bok);color:var(--ok)}.pest.cancelado{background:var(--ber);color:var(--er)}.pest.pausado{background:var(--bw);color:var(--pend)}
+/* BTNS */
+.btn{padding:.55rem 1rem;border:none;border-radius:8px;font-family:'Poppins',sans-serif;font-size:.82rem;font-weight:600;cursor:pointer;transition:all .15s;white-space:nowrap}
+.btn-gold{background:var(--gold);color:white}.btn-gold:hover{opacity:.9}
+.btn-dk{background:var(--ink);color:white}.btn-dk:hover{background:#2d2822}
+.btn-out{background:transparent;border:1.5px solid var(--bd);color:var(--soft)}.btn-out:hover{border-color:var(--gold);color:var(--gold)}
+.btn-ok{background:var(--ok);color:white}.btn-ok:hover{opacity:.9}
+.btn-dan{background:transparent;border:1.5px solid var(--er);color:var(--er)}.btn-dan:hover{background:var(--er);color:white}
+.btn-sm{padding:.35rem .75rem;font-size:.75rem}
+/* CONFIG chips */
+.cfg-item{display:flex;align-items:center;gap:.65rem;background:white;border:1px solid var(--bd);border-radius:9px;padding:.65rem .9rem;margin-bottom:.5rem}
+.cfg-dot{width:11px;height:11px;border-radius:50%;flex-shrink:0}
+.cfg-name{font-weight:600;flex:1}
+.cfg-sub{font-size:.75rem;color:var(--muted)}
+/* IMPORT */
+.import-box{background:white;border:1px solid var(--bd);border-radius:var(--r);padding:1.4rem;margin-bottom:1.4rem}
+.import-box h3{font-family:'Oswald',sans-serif;font-size:1.05rem;margin-bottom:.65rem}
+.import-box p{font-size:.8rem;color:var(--muted);margin-bottom:1rem}
+.drop-zone{border:2px dashed var(--bd);border-radius:var(--r);padding:1.75rem;text-align:center;cursor:pointer;transition:all .2s}
+.drop-zone:hover{border-color:var(--gold);background:var(--gp)}
+.drop-zone input{display:none}
+.import-res{margin-top:.85rem;font-size:.84rem;display:none}
+.import-res.vis{display:block}
+.section-hdr{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.25rem;flex-wrap:wrap;gap:.75rem}
+.section-hdr h2{font-family:'Oswald',sans-serif;font-size:1.25rem}
+</style>
+</head>
+<body>
+
+<!-- LOGIN -->
+<div class="login-scr" id="login-scr">
+  <div class="login-box">
+    <h1>El Lazo · Admin</h1>
+    <p>Panel de administración</p>
+    <input type="password" id="pwd-in" placeholder="Contraseña" onkeydown="if(event.key==='Enter')checkPwd()"/>
+    <button onclick="checkPwd()">Ingresar</button>
+    <div class="login-err" id="login-err">Contraseña incorrecta</div>
+  </div>
+</div>
+
+<!-- MODAL CAMPAÑA -->
+<div class="modal-bg" id="modal-camp">
+  <div class="modal">
+    <h2 id="modal-camp-title">Nueva campaña</h2>
+    <input type="hidden" id="mc-id"/>
+    <div class="mgrid">
+      <div class="mfg"><label>Título *</label><input type="text" id="mc-titulo" placeholder="Cena de Shabat"/></div>
+      <div class="mfg"><label>Slug (URL) *</label><input type="text" id="mc-slug" placeholder="shabat"/></div>
+    </div>
+    <div class="mfg"><label>Descripción</label><input type="text" id="mc-desc" placeholder="Breve descripción pública"/></div>
+    <div class="mgrid">
+      <div class="mfg"><label>URL imagen</label><input type="url" id="mc-img" placeholder="https://..."/></div>
+      <div class="mfg"><label>Organización</label><input type="text" id="mc-org" value="El Lazo"/></div>
+    </div>
+    <div class="mgrid">
+      <div class="mfg"><label>Tipo de campaña</label>
+        <select id="mc-tipo-camp"><option value="pago">💳 Pago (evento/servicio)</option><option value="donacion">💚 Donación (causa)</option></select>
+      </div>
+      <div class="mfg"><label>Tipo de cobro</label>
+        <select id="mc-tipo-cobro"><option value="unico">Pago único</option><option value="suscripcion">Solo suscripción</option><option value="ambos">Ambos</option></select>
+      </div>
+    </div>
+    <div class="mgrid">
+      <div class="mfg"><label>Mostrar en marketplace</label>
+        <select id="mc-marketplace"><option value="false">No</option><option value="true">Sí</option></select>
+      </div>
+      <div class="mfg"><label>Mostrar monto recaudado</label>
+        <select id="mc-mostrar-monto"><option value="false">No</option><option value="true">Sí</option></select>
+      </div>
+    </div>
+    <div class="mgrid">
+      <div class="mfg"><label>Mostrar donantes (con opción anónimo)</label>
+        <select id="mc-mostrar-donantes"><option value="false">No</option><option value="true">Sí</option></select>
+      </div>
+      <div class="mfg"><label>Meta recaudación (opcional)</label>
+        <input type="number" id="mc-meta" placeholder="500000"/></div>
+    </div>
+    <div class="mgrid">
+      <div class="mfg"><label>Fecha cierre (opcional)</label><input type="date" id="mc-cierre"/></div>
+      <div class="mfg"><label>Meses suscripción (separados por coma)</label><input type="text" id="mc-meses" value="3,6,12" placeholder="3,6,12"/></div>
+    </div>
+    <div class="mfg"><label>Opciones de monto</label>
+      <div class="montos-field" id="mc-montos-list"></div>
+      <button class="btn btn-out btn-sm" style="margin-top:.5rem" onclick="addMontoRow()">+ Agregar monto</button>
+    </div>
+    <div class="mgrid">
+      <div class="mfg"><label>Campo otro monto</label><select id="mc-otro"><option value="true">Habilitado</option><option value="false">Deshabilitado</option></select></div>
+      <div class="mfg"><label>Monto mínimo</label><input type="number" id="mc-minimo" value="0"/></div>
+    </div>
+    <div class="modal-actions">
+      <button class="btn btn-out" onclick="cerrarModalCamp()">Cancelar</button>
+      <button class="btn btn-gold" onclick="guardarCamp()">Guardar campaña</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL DONANTE -->
+<div class="modal-bg" id="modal-don">
+  <div class="modal">
+    <h2 id="modal-don-title">Nuevo donante</h2>
+    <input type="hidden" id="md-id"/>
+    <div class="mgrid">
+      <div class="mfg"><label>Nombre *</label><input type="text" id="md-nombre"/></div>
+      <div class="mfg"><label>Apellido *</label><input type="text" id="md-apellido"/></div>
+    </div>
+    <div class="mgrid">
+      <div class="mfg"><label>Email</label><input type="email" id="md-email"/></div>
+      <div class="mfg"><label>Celular</label><input type="tel" id="md-celular"/></div>
+    </div>
+    <div class="mgrid">
+      <div class="mfg"><label>Categoría</label><select id="md-cat"><option value="">Sin categoría</option></select></div>
+      <div class="mfg"><label>ID manual (opcional)</label><input type="text" id="md-idmanual" placeholder="ej: SL-001"/></div>
+    </div>
+    <div class="mfg"><label>Tags (separados por coma)</label><input type="text" id="md-tags" placeholder="alumni, vip"/></div>
+    <div class="mfg"><label>Notas internas</label><textarea id="md-notas"></textarea></div>
+    <div class="mgrid">
+      <div class="mfg"><label>Contraseña portal</label><input type="password" id="md-pwd" placeholder="Dejar vacío = sin acceso"/></div>
+      <div class="mfg"><label>Acceso al portal</label><select id="md-portal"><option value="false">Sin acceso</option><option value="true">Con acceso</option></select></div>
+    </div>
+    <div class="modal-actions">
+      <button class="btn btn-out" onclick="cerrarModalDon()">Cancelar</button>
+      <button class="btn btn-gold" onclick="guardarDon()">Guardar</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL PARTNER -->
+<div class="modal-bg" id="modal-partner">
+  <div class="modal">
+    <h2>Nuevo Partner</h2>
+    <div class="mfg"><label>Buscar donante</label><input type="text" id="mp-buscar" placeholder="Nombre, email o ID..." oninput="buscarDonante()"/></div>
+    <div id="mp-resultados" style="margin-bottom:.85rem;display:none"></div>
+    <input type="hidden" id="mp-donante-id"/>
+    <div id="mp-donante-sel" style="font-size:.82rem;color:var(--ok);margin-bottom:.85rem;display:none"></div>
+    <div class="mgrid">
+      <div class="mfg"><label>Tier</label><select id="mp-tier"><option value="">Sin tier</option></select></div>
+      <div class="mfg"><label>Monto mensual *</label><input type="number" id="mp-monto" placeholder="10000"/></div>
+    </div>
+    <div class="mgrid">
+      <div class="mfg"><label>Mostrar públicamente</label><select id="mp-publico"><option value="true">Sí</option><option value="false">No</option></select></div>
+      <div class="mfg"><label>Mostrar monto</label><select id="mp-mostrar-monto"><option value="false">No</option><option value="true">Sí</option></select></div>
+    </div>
+    <div class="modal-actions">
+      <button class="btn btn-out" onclick="cerrarModalPartner()">Cancelar</button>
+      <button class="btn btn-gold" onclick="guardarPartner()">Crear Partner</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- MODAL EDITAR PARTNER -->
+<div class="modal-bg" id="modal-partner-edit">
+  <div class="modal">
+    <h2>Editar Partner</h2>
+    <input type="hidden" id="pe-id"/>
+    <div class="mgrid">
+      <div class="mfg"><label>Tier</label><select id="pe-tier"><option value="">Sin tier</option></select></div>
+      <div class="mfg"><label>Monto mensual *</label><input type="number" id="pe-monto" placeholder="10000"/></div>
+    </div>
+    <div class="mgrid">
+      <div class="mfg"><label>Estado</label>
+        <select id="pe-estado">
+          <option value="activo">Activo</option>
+          <option value="pausado">Pausado</option>
+          <option value="cancelado">Cancelado</option>
+        </select>
+      </div>
+      <div class="mfg"><label>Mostrar públicamente</label>
+        <select id="pe-publico"><option value="true">Sí</option><option value="false">No</option></select>
+      </div>
+    </div>
+    <div class="mfg"><label>Mostrar monto</label>
+      <select id="pe-mostrar-monto"><option value="false">No</option><option value="true">Sí</option></select>
+    </div>
+    <div class="modal-actions">
+      <button class="btn btn-out" onclick="document.getElementById('modal-partner-edit').classList.remove('open')">Cancelar</button>
+      <button class="btn btn-gold" onclick="guardarPartnerEdit()">Guardar cambios</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- MODAL TIER -->
+<div class="modal-bg" id="modal-tier">
+  <div class="modal">
+    <h2 id="mt-title">Tier de Partner</h2>
+    <input type="hidden" id="mt-id"/>
+    <div class="mgrid">
+      <div class="mfg"><label>Nombre *</label><input type="text" id="mt-nombre" placeholder="Ej: Oro"/></div>
+      <div class="mfg"><label>Color</label><input type="color" id="mt-color" value="#C9974A" style="height:42px;padding:.3rem"/></div>
+    </div>
+    <div class="mfg"><label>Monto mínimo mensual</label><input type="number" id="mt-minimo" placeholder="20000"/></div>
+    <div class="mfg">
+      <label>Montos sugeridos (aparecen como botones en el formulario)</label>
+      <div class="montos-field" id="mt-montos-list"></div>
+      <button class="btn btn-out btn-sm" style="margin-top:.5rem" onclick="(()=>{const el=document.getElementById('mt-montos-list');const r=document.createElement('div');r.className='monto-row';r.innerHTML='<input type=\'text\' placeholder=\'Etiqueta\'/><input type=\'number\' placeholder=\'Monto\'/><button class=\'btn btn-dan btn-sm\' onclick=\'this.parentElement.remove()\'>✕</button>';el.appendChild(r);})()">+ Agregar monto</button>
+    </div>
+    <div class="modal-actions">
+      <button class="btn btn-out" onclick="document.getElementById('modal-tier').classList.remove('open')">Cancelar</button>
+      <button class="btn btn-gold" onclick="guardarTier()">Guardar tier</button>
+    </div>
+  </div>
+</div>
+
+<!-- APP -->
+<div id="app-content" style="display:none">
+  <div class="topbar">
+    <h1>El Lazo · Admin</h1>
+    <div class="tb-right">
+      <small id="ts-info" style="font-size:.7rem;color:rgba(255,255,255,.4)">v16</small>
+      <a href="/index.html" class="btn-tb">← Sitio</a>
+      <button class="btn-tb" onclick="logout()">Salir</button>
+    </div>
+  </div>
+  <div class="tabs-wrap">
+    <div class="tab on" onclick="goTab('campanas')">Campañas</div>
+    <div class="tab" onclick="goTab('pagos')">Pagos</div>
+    <div class="tab" onclick="goTab('donantes')">CRM Donantes</div>
+    <div class="tab" onclick="goTab('partners')">Partners</div>
+    <div class="tab" onclick="goTab('importar')">Importar</div>
+    <div class="tab" onclick="goTab('config')">Configuración</div>
+  </div>
+  <div class="wrap">
+
+    <!-- CAMPAÑAS -->
+    <div class="panel on" id="panel-campanas">
+      <div class="section-hdr">
+        <h2>Campañas</h2>
+        <button class="btn btn-gold" onclick="abrirModalCamp()">+ Nueva campaña</button>
+      </div>
+      <div class="camps-grid" id="camps-grid"><div style="color:var(--muted)">Cargando...</div></div>
+    </div>
+
+    <!-- PAGOS -->
+    <div class="panel" id="panel-pagos">
+      <div class="stats" id="stats-row"></div>
+      <div class="filtros">
+        <input type="text" id="pf-q" placeholder="Buscar nombre, email..." oninput="filtrarPagos()"/>
+        <select id="pf-estado" onchange="filtrarPagos()"><option value="">Todos los estados</option><option value="aprobado">Aprobado</option><option value="pendiente">Pendiente</option><option value="rechazado">Rechazado</option></select>
+        <select id="pf-camp" onchange="filtrarPagos()"><option value="">Todas las campañas</option></select>
+        <button class="btn btn-out btn-sm" onclick="exportarPagos()">⬇ Excel</button>
+      </div>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>Fecha</th><th>Nombre</th><th>Campaña</th><th>Monto</th><th>Método</th><th>Estado</th><th>Acciones</th></tr></thead>
+          <tbody id="pagos-tbody"><tr><td colspan="7" class="empty">Cargando...</td></tr></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- DONANTES CRM -->
+    <div class="panel" id="panel-donantes">
+      <div class="stats">
+        <div class="stat"><div class="stat-l">Donantes</div><div class="stat-v" id="cs-total">—</div></div>
+        <div class="stat"><div class="stat-l">Total donado</div><div class="stat-v g" id="cs-monto">—</div></div>
+        <div class="stat"><div class="stat-l">Con portal</div><div class="stat-v ok" id="cs-portal">—</div></div>
+      </div>
+      <div class="section-hdr" style="margin-bottom:1rem">
+        <div class="filtros" style="flex:1;margin-bottom:0;flex-wrap:nowrap">
+          <input type="text" id="df-q" placeholder="🔍 Buscar nombre, email, ID..." oninput="filtrarDonantes()" autocomplete="off"/>
+          <select id="df-cat" onchange="filtrarDonantes()"><option value="">Todas las categorías</option></select>
+        </div>
+        <div style="display:flex;gap:.5rem">
+          <button class="btn btn-out btn-sm" onclick="exportarCRM()">⬇ Excel</button>
+          <button class="btn btn-gold" onclick="abrirModalDon()">+ Nuevo</button>
+        </div>
+      </div>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>ID</th><th>Nombre</th><th>Email</th><th>Categoría</th><th>Total</th><th>Último pago</th><th>Portal</th></tr></thead>
+          <tbody id="don-tbody"><tr><td colspan="7" class="empty">Cargando...</td></tr></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- PARTNERS -->
+    <div class="panel" id="panel-partners">
+      <div class="section-hdr">
+        <h2>Partners</h2>
+        <div style="display:flex;gap:.5rem;align-items:center">
+          <select id="prt-estado" onchange="cargarPartners()" style="border:1.5px solid var(--bd);background:white;border-radius:8px;padding:.5rem .8rem;font-size:.87rem;color:var(--ink);outline:none">
+            <option value="activo">Activos</option><option value="pausado">Pausados</option><option value="cancelado">Cancelados</option>
+          </select>
+          <button class="btn btn-gold" onclick="document.getElementById('modal-partner').classList.add('open')">+ Nuevo partner</button>
+        </div>
+      </div>
+      <div id="partners-list"><div style="color:var(--muted)">Cargando...</div></div>
+    </div>
+
+    <!-- IMPORTAR -->
+    <div class="panel" id="panel-importar">
+      <div class="import-box">
+        <h3>📥 Importar donantes</h3>
+        <p>Columnas CSV: <strong>nombre, apellido, email, celular, categoria, notas, id_manual</strong><br/>Si tiene <code>id_manual</code> se usa ese ID; si no, se genera automáticamente.</p>
+        <div class="drop-zone" onclick="document.getElementById('csv-don').click()">
+          <div style="font-size:1.75rem;margin-bottom:.35rem">📄</div>
+          <div style="font-weight:600;font-size:.9rem">Seleccionar archivo CSV</div>
+          <div style="font-size:.75rem;color:var(--muted);margin-top:.2rem">o arrastrá aquí</div>
+          <input type="file" id="csv-don" accept=".csv" onchange="importarDonantes(this)"/>
+        </div>
+        <div class="import-res" id="import-don-res"></div>
+      </div>
+      <div class="import-box">
+        <h3>💰 Importar donaciones</h3>
+        <p>Columnas CSV: <strong>donante_id (UUID), monto, fecha (YYYY-MM-DD), concepto, metodo, campana</strong></p>
+        <div class="drop-zone" onclick="document.getElementById('csv-don2').click()">
+          <div style="font-size:1.75rem;margin-bottom:.35rem">💳</div>
+          <div style="font-weight:600;font-size:.9rem">Seleccionar archivo CSV</div>
+          <input type="file" id="csv-don2" accept=".csv" onchange="importarDonaciones(this)"/>
+        </div>
+        <div class="import-res" id="import-don2-res"></div>
+      </div>
+      <div class="import-box">
+        <h3>🤝 Importar partners</h3>
+        <p>Columnas CSV: <strong>email o donante_id (texto tipo SL-001), tier (nombre), monto_mensual, mostrar_publico (true/false)</strong></p>
+        <div class="drop-zone" onclick="document.getElementById('csv-prt').click()">
+          <div style="font-size:1.75rem;margin-bottom:.35rem">🤝</div>
+          <div style="font-weight:600;font-size:.9rem">Seleccionar archivo CSV</div>
+          <input type="file" id="csv-prt" accept=".csv" onchange="importarPartners(this)"/>
+        </div>
+        <div class="import-res" id="import-prt-res"></div>
+      </div>
+    </div>
+
+    <!-- CONFIG -->
+    <div class="panel" id="panel-config">
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem">
+        <div>
+          <div class="section-hdr" style="margin-bottom:.85rem"><h2 style="font-size:1.1rem">Categorías</h2><button class="btn btn-gold btn-sm" onclick="nuevaCategoria()">+ Nueva</button></div>
+          <div id="cat-list"></div>
+        </div>
+        <div>
+          <div class="section-hdr" style="margin-bottom:.85rem"><h2 style="font-size:1.1rem">Tiers Partners</h2><button class="btn btn-gold btn-sm" onclick="abrirModalTier()">+ Nuevo</button></div>
+          <div id="tier-list"></div>
+        </div>
+        <div>
+          <div class="section-hdr" style="margin-bottom:.85rem"><h2 style="font-size:1.1rem">Campos extra CRM</h2><button class="btn btn-gold btn-sm" onclick="nuevoCampo()">+ Nuevo</button></div>
+          <p style="font-size:.78rem;color:var(--muted);margin-bottom:.75rem">Campos adicionales para donantes. Marcá "En formulario" para pedirlos al momento del pago.</p>
+          <div id="campos-list"></div>
+        </div>
+      </div>
+      <!-- Routing URLs -->
+      <div style="grid-column:1/-1;border-top:1px solid var(--bd);padding-top:1.25rem;margin-top:.5rem">
+        <div class="section-hdr" style="margin-bottom:.65rem"><h2 style="font-size:1.1rem">URLs limpias</h2></div>
+        <p style="font-size:.82rem;color:var(--muted);margin-bottom:.85rem">Descargá el <code style="background:var(--bg2);padding:.1rem .35rem;border-radius:4px">_redirects</code> actualizado con todas tus campañas y subilo junto con los HTML en Cloudflare Pages para que <strong>/shabat</strong> funcione como URL limpia.</p>
+        <button class="btn btn-gold" onclick="descargarRedirects()">⬇ Descargar _redirects</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- DRAWER DONANTE -->
+<div class="drawer-bg" id="drw-bg" onclick="cerrarDrawer()"></div>
+<div class="drawer" id="drw">
+  <div class="drw-hdr">
+    <div>
+      <div class="drw-id" id="drw-id"></div>
+      <div class="drw-nombre" id="drw-nombre"></div>
+      <div class="drw-email" id="drw-email"></div>
+    </div>
+    <button class="drw-close" onclick="cerrarDrawer()">✕</button>
+  </div>
+  <div class="drw-body">
+    <div class="drw-stats">
+      <div><div class="dsv" id="drw-total">—</div><div class="dsl">Total donado</div></div>
+      <div><div class="dsv" id="drw-pagos">—</div><div class="dsl">Pagos</div></div>
+    </div>
+    <div id="drw-mp-btn-wrap" style="margin-bottom:1rem;display:none">
+      <button class="btn btn-out btn-sm" onclick="buscarEnMP()" style="width:100%;justify-content:center;display:flex;align-items:center;gap:.4rem">
+        🔍 Buscar pagos en Mercado Pago
+      </button>
+      <div id="drw-mp-result" style="margin-top:.65rem"></div>
+    </div>
+    <div class="drw-sec">
+      <h3>Registrar donación manual</h3>
+      <div class="add-don">
+        <div class="add-don-grid">
+          <input type="number" id="don-monto" placeholder="Monto $"/>
+          <input type="date" id="don-fecha"/>
+        </div>
+        <div class="add-don-grid">
+          <input type="text" id="don-concepto" placeholder="Concepto"/>
+          <select id="don-metodo"><option value="efectivo">Efectivo</option><option value="transferencia">Transferencia</option><option value="cheque">Cheque</option><option value="otro">Otro</option></select>
+        </div>
+        <input type="text" id="don-campana" placeholder="Campaña (opcional)" style="width:100%;border:1.5px solid var(--bd);background:white;border-radius:8px;padding:.55rem .8rem;font-size:.84rem;font-family:'Poppins',sans-serif;color:var(--ink);outline:none;margin-bottom:.55rem"/>
+        <button class="btn btn-ok btn-sm" style="width:100%" onclick="agregarDonManual()">+ Registrar donación</button>
+      </div>
+    </div>
+    <div class="drw-sec">
+      <h3>Historial</h3>
+      <div id="drw-hist"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+const API = 'https://nhmaciyqffgjumatgtfh.supabase.co/functions/v1/mp-pagos';
+const PWD = '31333133';
+let todoPagos=[], todoDonantes=[], categorias=[], tiers=[], camposCustom=[], donanteActivo=null;
+
+// AUTH
+function checkPwd(){
+  if(document.getElementById('pwd-in').value===PWD){document.getElementById('login-scr').style.display='none';document.getElementById('app-content').style.display='block';cargarTodo();}
+  else document.getElementById('login-err').classList.add('vis');
+}
+function logout(){document.getElementById('login-scr').style.display='flex';document.getElementById('app-content').style.display='none';}
+document.getElementById('pwd-in').addEventListener('keydown',e=>{if(e.key==='Enter')checkPwd();});
+
+// TABS
+function goTab(name){
+  const names=['campanas','pagos','donantes','partners','importar','config'];
+  document.querySelectorAll('.tab').forEach((t,i)=>t.classList.toggle('on',names[i]===name));
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('on'));
+  document.getElementById('panel-'+name).classList.add('on');
+  if(name==='partners') cargarPartners();
+  if(name==='config') renderConfig();
+}
+
+// CARGAR TODO
+async function cargarTodo(){
+  const [rc,rp,rd,rcat,rt,rcc]=await Promise.all([
+    fetch(API+'/campanas').then(r=>r.json()).catch(()=>({campanas:[]})),
+    fetch(API+'/pagos').then(r=>r.json()).catch(()=>({pagos:[]})),
+    fetch(API+'/donantes').then(r=>r.json()).catch(()=>({donantes:[]})),
+    fetch(API+'/categorias').then(r=>r.json()).catch(()=>({categorias:[]})),
+    fetch(API+'/tiers').then(r=>r.json()).catch(()=>({tiers:[]})),
+    fetch(API+'/campos-custom').then(r=>r.json()).catch(()=>({campos:[]})),
+  ]);
+  todoPagos=rp.pagos||[]; todoDonantes=rd.donantes||[]; categorias=rcat.categorias||[]; tiers=rt.tiers||[]; camposCustom=rcc.campos||[];
+  renderCampanas(rc.campanas||[]);
+  renderPagos();
+  renderDonantes();
+  // Llenar selects
+  const fcatEl=document.getElementById('df-cat'); fcatEl.innerHTML='<option value="">Todas las categorías</option>'+categorias.map(c=>`<option value="${c.id}">${x(c.nombre)}</option>`).join('');
+  const mdcatEl=document.getElementById('md-cat'); mdcatEl.innerHTML='<option value="">Sin categoría</option>'+categorias.map(c=>`<option value="${c.id}">${x(c.nombre)}</option>`).join('');
+  const fpcamp=document.getElementById('pf-camp'); fpcamp.innerHTML='<option value="">Todas las campañas</option>'+(rc.campanas||[]).map(c=>`<option value="${c.slug}">${x(c.titulo)}</option>`).join('');
+  const mptier=document.getElementById('mp-tier'); mptier.innerHTML='<option value="">Sin tier</option>'+tiers.map(t=>`<option value="${t.id}">${x(t.nombre)} - $${fmt(t.monto_minimo)}/mes</option>`).join('');
+  document.getElementById('ts-info').textContent=new Date().toLocaleTimeString('es-AR');
+}
+
+// CAMPAÑAS
+function renderCampanas(camps){
+  const grid=document.getElementById('camps-grid');
+  if(!camps.length){grid.innerHTML='<div style="color:var(--muted)">No hay campañas. Creá la primera.</div>';return;}
+  const tipoBg={'donacion':'#E8F5EE','pago':'#EEF0FF'};
+  const tipoColor={'donacion':'#2E7D52','pago':'#3730A3'};
+  grid.innerHTML=camps.map(c=>`<div class="camp-card${c.activa?'':' inactiva'}">
+    ${c.imagen_url?`<img class="camp-img" src="${x(c.imagen_url)}" onerror="this.style.display='none'">`:''}
+    <div class="camp-body">
+      <div class="camp-top">
+        <span class="camp-slug">${x(c.slug)}</span>
+        <span class="tipo-badge-dk" style="background:${tipoBg[c.tipo_campana]||'#EEF0FF'};color:${tipoColor[c.tipo_campana]||'#3730A3'}">${c.tipo_campana==='donacion'?'💚 Donación':'💳 Pago'}</span>
+        ${c.mostrar_en_marketplace?'<span style="font-size:.65rem;color:var(--ok)">📢 Marketplace</span>':''}
+      </div>
+      <div class="camp-titulo">${x(c.titulo)}</div>
+      <div class="camp-meta">
+        <span>${{unico:'Pago único',suscripcion:'Suscripción',ambos:'Único + suscripción'}[c.tipo_pago]||c.tipo_pago}</span>
+        ${c.meta_recaudacion?`<span>Meta: $${fmt(c.meta_recaudacion)}</span>`:''}
+        ${c.fecha_cierre?`<span>Cierre: ${new Date(c.fecha_cierre).toLocaleDateString('es-AR')}</span>`:''}
+      </div>
+      <div class="camp-actions">
+        <button class="btn btn-out btn-sm" onclick="copiarLink('${x(c.slug)}')">🔗 Link</button>
+        <button class="btn btn-out btn-sm" onclick="editarCamp(${JSON.stringify(c).replace(/"/g,'&quot;')})">✏️ Editar</button>
+        <button class="btn btn-out btn-sm" onclick="toggleCamp('${c.id}',${!c.activa})">${c.activa?'⏸ Pausar':'▶ Activar'}</button>
+        <button class="btn btn-dan btn-sm" onclick="eliminarCamp('${c.id}','${x(c.titulo)}')">🗑</button>
+      </div>
+    </div>
+  </div>`).join('');
+}
+
+function copiarLink(slug){navigator.clipboard.writeText(`https://pagos.ellazo.com.ar/pago.html?s=${slug}`).then(()=>alert('Link copiado: pagos.ellazo.com.ar/pago.html?s='+slug));}
+async function toggleCamp(id,activa){await fetch(`${API}/campanas/${id}`,{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify({activa})});cargarTodo();}
+async function eliminarCamp(id,titulo){if(!confirm(`¿Eliminar la campaña "${titulo}"? Esta acción no se puede deshacer.`))return;await fetch(`${API}/campanas/${id}`,{method:'DELETE'});cargarTodo();}
+
+// MODAL CAMPAÑA
+function abrirModalCamp(c=null){
+  document.getElementById('modal-camp-title').textContent=c?'Editar campaña':'Nueva campaña';
+  document.getElementById('mc-id').value=c?.id||'';
+  document.getElementById('mc-titulo').value=c?.titulo||'';
+  document.getElementById('mc-slug').value=c?.slug||'';
+  document.getElementById('mc-desc').value=c?.descripcion||'';
+  document.getElementById('mc-img').value=c?.imagen_url||'';
+  document.getElementById('mc-org').value=c?.org||'El Lazo';
+  document.getElementById('mc-tipo-camp').value=c?.tipo_campana||'pago';
+  document.getElementById('mc-tipo-cobro').value=c?.tipo_pago||'unico';
+  document.getElementById('mc-marketplace').value=String(c?.mostrar_en_marketplace||false);
+  document.getElementById('mc-mostrar-monto').value=String(c?.mostrar_monto_recaudado||false);
+  document.getElementById('mc-mostrar-donantes').value=String(c?.mostrar_donantes||false);
+  document.getElementById('mc-meta').value=c?.meta_recaudacion||'';
+  document.getElementById('mc-cierre').value=c?.fecha_cierre?c.fecha_cierre.slice(0,10):'';
+  document.getElementById('mc-meses').value=(c?.meses_opciones||[3,6,12]).join(',');
+  document.getElementById('mc-otro').value=String(c?.otro_monto!==false);
+  document.getElementById('mc-minimo').value=c?.monto_minimo||0;
+  // Montos
+  const montos=c?.montos||[];
+  renderMontosModal(montos);
+  document.getElementById('modal-camp').classList.add('open');
+}
+function editarCamp(c){abrirModalCamp(c);}
+function cerrarModalCamp(){document.getElementById('modal-camp').classList.remove('open');}
+function renderMontosModal(montos){
+  const el=document.getElementById('mc-montos-list');
+  el.innerHTML=montos.map((m,i)=>`<div class="monto-row">
+    <input type="text" placeholder="Etiqueta" value="${x(m.label||'')}"/>
+    <input type="number" placeholder="Monto" value="${m.valor||m.monto||m}"/>
+    <button class="btn btn-dan btn-sm" onclick="this.parentElement.remove()">✕</button>
+  </div>`).join('');
+}
+function addMontoRow(){
+  const el=document.getElementById('mc-montos-list');
+  const row=document.createElement('div'); row.className='monto-row';
+  row.innerHTML=`<input type="text" placeholder="Etiqueta"/><input type="number" placeholder="Monto"/><button class="btn btn-dan btn-sm" onclick="this.parentElement.remove()">✕</button>`;
+  el.appendChild(row);
+}
+async function guardarCamp(){
+  const id=document.getElementById('mc-id').value;
+  const rows=[...document.querySelectorAll('#mc-montos-list .monto-row')];
+  const montos=rows.map(r=>{const ins=r.querySelectorAll('input');return{label:ins[0].value.trim(),valor:Number(ins[1].value)||0};}).filter(m=>m.valor>0);
+  const payload={
+    titulo:document.getElementById('mc-titulo').value.trim(),
+    slug:document.getElementById('mc-slug').value.trim(),
+    descripcion:document.getElementById('mc-desc').value.trim(),
+    imagen_url:document.getElementById('mc-img').value.trim(),
+    org:document.getElementById('mc-org').value.trim()||'El Lazo',
+    tipo_campana:document.getElementById('mc-tipo-camp').value,
+    tipo_pago:document.getElementById('mc-tipo-cobro').value,
+    mostrar_en_marketplace:document.getElementById('mc-marketplace').value==='true',
+    mostrar_monto_recaudado:document.getElementById('mc-mostrar-monto').value==='true',
+    mostrar_donantes:document.getElementById('mc-mostrar-donantes').value==='true',
+    meta_recaudacion:document.getElementById('mc-meta').value||null,
+    fecha_cierre:document.getElementById('mc-cierre').value||null,
+    meses_opciones:document.getElementById('mc-meses').value.split(',').map(n=>parseInt(n.trim())).filter(Boolean),
+    otro_monto:document.getElementById('mc-otro').value==='true',
+    monto_minimo:Number(document.getElementById('mc-minimo').value)||0,
+    montos,
+  };
+  if(!payload.titulo||!payload.slug){alert('Título y slug son obligatorios.');return;}
+  try{
+    const res=await fetch(id?`${API}/campanas/${id}`:`${API}/campanas`,{method:id?'PUT':'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
+    const data=await res.json(); if(!res.ok) throw new Error(data.error||'Error');
+    cerrarModalCamp(); cargarTodo();
+  }catch(e){alert('Error: '+e.message);}
+}
+
+// PAGOS
+function renderPagos(lista=null){
+  const pagos=lista||todoPagos;
+  const tbody=document.getElementById('pagos-tbody');
+  if(!pagos.length){tbody.innerHTML='<tr><td colspan="7" class="empty">Sin pagos.</td></tr>';return;}
+  tbody.innerHTML=pagos.map(p=>`<tr>
+    <td style="white-space:nowrap;font-size:.8rem">${fd(p.created_at)}</td>
+    <td class="name" style="white-space:nowrap">${x(p.nombre)} ${x(p.apellido)}<br><span style="font-size:.73rem;color:var(--muted)">${x(p.email||'')}</span></td>
+    <td style="font-size:.8rem">${x(p.link_id||'—')}</td>
+    <td class="monto">$${fmt(p.monto)}</td>
+    <td style="font-size:.8rem">${x(p.metodo_cobro||'—')}</td>
+    <td><span class="badge ${p.estado}">${p.estado}</span></td>
+    <td style="white-space:nowrap;display:flex;gap:.3rem">
+      ${p.estado==='pendiente'?`<button class="btn btn-ok btn-sm" onclick="aprobar('${p.id}')" title="Marcar como pagado">✓ Pagado</button>`:''}
+    </td>
+  </tr>`).join('');
+  // Stats
+  const ap=todoPagos.filter(p=>p.estado==='aprobado');
+  const total=ap.reduce((a,p)=>a+Number(p.monto),0);
+  document.getElementById('stats-row').innerHTML=`
+    <div class="stat"><div class="stat-l">Total pagos</div><div class="stat-v">${todoPagos.length}</div></div>
+    <div class="stat"><div class="stat-l">Aprobados</div><div class="stat-v ok">${ap.length}</div></div>
+    <div class="stat"><div class="stat-l">Pendientes</div><div class="stat-v" style="color:var(--pend)">${todoPagos.filter(p=>p.estado==='pendiente').length}</div></div>
+    <div class="stat"><div class="stat-l">Total recaudado</div><div class="stat-v g">$${fmt(total)}</div></div>`;
+}
+function filtrarPagos(){
+  const q=document.getElementById('pf-q').value.toLowerCase();
+  const est=document.getElementById('pf-estado').value;
+  const camp=document.getElementById('pf-camp').value;
+  const ft=todoPagos.filter(p=>
+    (!q||`${p.nombre||''} ${p.apellido||''} ${p.email||''}`.toLowerCase().includes(q))&&
+    (!est||p.estado===est)&&
+    (!camp||p.link_id===camp)
+  );
+  renderPagos(ft);
+}
+async function aprobar(id){
+  const res=await fetch(`${API}/aprobar/${id}`,{method:'POST'});
+  if(res.ok){todoPagos=todoPagos.map(p=>p.id===id?{...p,estado:'aprobado'}:p);renderPagos();}
+}
+
+function exportarPagos(){
+  const hs=['Fecha','Nombre','Apellido','Email','Campaña','Monto','Método','Estado'];
+  const rows=todoPagos.map(p=>[fd(p.created_at),p.nombre||'',p.apellido||'',p.email||'',p.link_id||'',p.monto||0,p.metodo_cobro||'',p.estado]);
+  descargarCSV(hs,rows,'pagos-ellazo');
+}
+
+// DONANTES
+function renderDonantes(lista=null){
+  const don=lista||todoDonantes;
+  const total=don.reduce((a,d)=>a+Number(d.total_donado||0),0);
+  const conPortal=don.filter(d=>d.portal_activo).length;
+  document.getElementById('cs-total').textContent=don.length;
+  document.getElementById('cs-monto').textContent='$'+fmt(total);
+  document.getElementById('cs-portal').textContent=conPortal;
+  const tbody=document.getElementById('don-tbody');
+  if(!don.length){tbody.innerHTML='<tr><td colspan="7" class="empty">Sin donantes.</td></tr>';return;}
+  tbody.innerHTML=don.map(d=>`<tr style="cursor:pointer" onclick="abrirDrawer('${d.id}')">
+    <td class="did">${x(d.donante_id)}</td>
+    <td class="name">${x(d.nombre)} ${x(d.apellido)}</td>
+    <td style="font-size:.82rem">${x(d.email||'—')}</td>
+    <td>${d.categorias_donante?`<span class="badge" style="background:${d.categorias_donante.color}22;color:${d.categorias_donante.color}">${x(d.categorias_donante.nombre)}</span>`:'—'}</td>
+    <td class="monto">$${fmt(d.total_donado||0)}</td>
+    <td style="font-size:.78rem;white-space:nowrap">${d.ultimo_pago?fd(d.ultimo_pago):'—'}</td>
+    <td style="font-size:.78rem">${d.portal_activo?'<span style="color:var(--ok);font-weight:700">✓</span>':'—'}</td>
+  </tr>`).join('');
+}
+function filtrarDonantes(){
+  const q=document.getElementById('df-q').value.toLowerCase();
+  const cat=document.getElementById('df-cat').value;
+  renderDonantes(todoDonantes.filter(d=>
+    (!q||`${d.nombre} ${d.apellido} ${d.email||''} ${d.donante_id}`.toLowerCase().includes(q))&&
+    (!cat||d.categoria_id===cat)
+  ));
+}
+function exportarCRM(){
+  const hs=['ID','Nombre','Apellido','Email','Celular','Categoría','Total donado','Pagos','Portal'];
+  const rows=todoDonantes.map(d=>[d.donante_id,d.nombre,d.apellido,d.email||'',d.celular||'',d.categorias_donante?.nombre||'',d.total_donado||0,d.cantidad_pagos||0,d.portal_activo?'Sí':'No']);
+  descargarCSV(hs,rows,'crm-ellazo');
+}
+
+// MODAL DONANTE
+function abrirModalDon(don=null){
+  document.getElementById('modal-don-title').textContent=don?'Editar donante':'Nuevo donante';
+  document.getElementById('md-id').value=don?.id||'';
+  document.getElementById('md-nombre').value=don?.nombre||'';
+  document.getElementById('md-apellido').value=don?.apellido||'';
+  document.getElementById('md-email').value=don?.email||'';
+  document.getElementById('md-celular').value=don?.celular||'';
+  document.getElementById('md-cat').value=don?.categoria_id||'';
+  document.getElementById('md-idmanual').value='';
+  document.getElementById('md-tags').value=(don?.tags||[]).join(', ');
+  document.getElementById('md-notas').value=don?.notas||'';
+  document.getElementById('md-pwd').value='';
+  document.getElementById('md-portal').value=String(don?.portal_activo||false);
+  document.getElementById('modal-don').classList.add('open');
+}
+function cerrarModalDon(){document.getElementById('modal-don').classList.remove('open');}
+async function guardarDon(){
+  const id=document.getElementById('md-id').value;
+  const payload={
+    nombre:document.getElementById('md-nombre').value.trim(),
+    apellido:document.getElementById('md-apellido').value.trim(),
+    email:document.getElementById('md-email').value.trim(),
+    celular:document.getElementById('md-celular').value.trim(),
+    categoria_id:document.getElementById('md-cat').value||null,
+    tags:document.getElementById('md-tags').value.split(',').map(t=>t.trim()).filter(Boolean),
+    notas:document.getElementById('md-notas').value.trim(),
+    portal_activo:document.getElementById('md-portal').value==='true',
+  };
+  if(!id) payload.id_manual=document.getElementById('md-idmanual').value.trim()||undefined;
+  if(document.getElementById('md-pwd').value) payload.password=document.getElementById('md-pwd').value;
+  if(!payload.nombre||!payload.apellido){alert('Nombre y apellido son obligatorios.');return;}
+  try{
+    const res=await fetch(id?`${API}/donantes/${id}`:`${API}/donantes`,{method:id?'PUT':'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
+    const data=await res.json(); if(!res.ok) throw new Error(data.error||'Error');
+    cerrarModalDon(); cargarTodo();
+  }catch(e){alert('Error: '+e.message);}
+}
+
+// DRAWER
+async function abrirDrawer(id){
+  const d=todoDonantes.find(d=>d.id===id); if(!d) return;
+  donanteActivo=d;
+  document.getElementById('drw-id').textContent=d.donante_id;
+  document.getElementById('drw-nombre').textContent=`${d.nombre} ${d.apellido}`;
+  document.getElementById('drw-email').textContent=d.email||'';
+  document.getElementById('drw-total').textContent='$'+fmt(d.total_donado||0);
+  document.getElementById('drw-pagos').textContent=d.cantidad_pagos||0;
+  document.getElementById('don-fecha').value=new Date().toISOString().slice(0,10);
+  document.getElementById('drw').classList.add('open');
+  document.getElementById('drw-bg').classList.add('open');
+  // Show MP search if donor has email
+  document.getElementById('drw-mp-btn-wrap').style.display=d.email?'block':'none';
+  document.getElementById('drw-mp-result').innerHTML='';
+  document.getElementById('drw-hist').innerHTML='<div style="color:var(--muted);font-style:italic;font-size:.84rem">Cargando...</div>';
+  try{
+    const res=await fetch(`${API}/donantes/${id}/historial`);
+    const {pagos,donaciones_manuales}=await res.json();
+    const todos=[...(pagos||[]).map(p=>({...p,_t:'p'})),...(donaciones_manuales||[]).map(d=>({...d,_t:'m'}))];
+    todos.sort((a,b)=>new Date(b.created_at||b.fecha+'T00:00')-new Date(a.created_at||a.fecha+'T00:00'));
+    const el=document.getElementById('drw-hist');
+    if(!todos.length){el.innerHTML='<div style="color:var(--muted);font-style:italic;font-size:.84rem">Sin pagos.</div>';return;}
+    el.innerHTML=todos.map(p=>p._t==='p'
+      ?`<div style="border:1px solid var(--bd);border-radius:9px;padding:.75rem .9rem;margin-bottom:.5rem;display:flex;justify-content:space-between;align-items:center;gap:.5rem;flex-wrap:wrap"><div><div style="font-weight:600;font-size:.85rem">${x(p.titulo||'Pago')}</div><div style="font-size:.72rem;color:var(--muted)">${x(p.link_id||'')} <span class="badge ${p.estado}">${p.estado}</span></div></div><div style="text-align:right"><div style="font-family:'Oswald',sans-serif;font-size:.95rem;font-weight:700">$${fmt(p.monto)}</div><div style="font-size:.68rem;color:var(--muted)">${fd(p.created_at)}</div></div></div>`
+      :`<div style="border:1px solid var(--bd);border-radius:9px;padding:.75rem .9rem;margin-bottom:.5rem;display:flex;justify-content:space-between;align-items:center;gap:.5rem;flex-wrap:wrap;background:var(--gp)"><div><div style="font-weight:600;font-size:.85rem">${x(p.concepto||'Donación manual')}</div><div style="font-size:.72rem;color:var(--muted)">${x(p.metodo||'')}${p.campana?' · '+x(p.campana):''}</div></div><div style="text-align:right"><div style="font-family:'Oswald',sans-serif;font-size:.95rem;font-weight:700">$${fmt(p.monto)}</div><div style="font-size:.68rem;color:var(--muted)">${p.fecha||'—'}</div></div></div>`
+    ).join('');
+  }catch(e){document.getElementById('drw-hist').innerHTML='<div style="color:var(--er)">Error al cargar historial</div>';}
+}
+function cerrarDrawer(){document.getElementById('drw').classList.remove('open');document.getElementById('drw-bg').classList.remove('open');}
+async function agregarDonManual(){
+  if(!donanteActivo) return;
+  const monto=Number(document.getElementById('don-monto').value);
+  const fecha=document.getElementById('don-fecha').value;
+  if(!monto||!fecha){alert('Completá monto y fecha.');return;}
+  try{
+    const res=await fetch(API+'/donaciones-manuales',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({donante_id:donanteActivo.id,monto,fecha,concepto:document.getElementById('don-concepto').value.trim(),metodo:document.getElementById('don-metodo').value,campana:document.getElementById('don-campana').value.trim()})});
+    if(!res.ok) throw new Error((await res.json()).error||'Error');
+    document.getElementById('don-monto').value='';document.getElementById('don-concepto').value='';document.getElementById('don-campana').value='';
+    abrirDrawer(donanteActivo.id); cargarTodo();
+  }catch(e){alert('Error: '+e.message);}
+}
+
+// PARTNERS
+
+
+// BUSCAR PAGOS EXTERNOS EN MP (pagos recibidos en la cuenta de El Lazo de este donante)
+async function buscarEnMP(){
+  if(!donanteActivo||!donanteActivo.email) return;
+  const el=document.getElementById('drw-mp-result');
+  el.innerHTML='<div style="color:var(--muted);font-size:.82rem">Buscando en Mercado Pago...</div>';
+  try{
+    const r=await fetch(`${API}/mp/buscar-pagos?email=${encodeURIComponent(donanteActivo.email)}`);
+    const d=await r.json();
+    if(!r.ok) throw new Error(d.error||'Error');
+    const ps=d.pagos||[];
+    if(!ps.length){
+      el.innerHTML='<div style="color:var(--muted);font-size:.82rem">No se encontraron pagos de este email en tu cuenta de MP.</div>';
+      return;
+    }
+    el.innerHTML=`<div style="font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:.5rem">${ps.length} pago${ps.length!==1?'s':''} encontrado${ps.length!==1?'s':''} en MP</div>`+
+    ps.map(p=>`<div style="border:1px solid var(--bd);border-radius:9px;padding:.6rem .85rem;margin-bottom:.35rem;display:flex;justify-content:space-between;align-items:center;gap:.5rem;flex-wrap:wrap;font-size:.82rem">
+      <div>
+        <div style="font-weight:600">${x(p.description||p.payment_method_id||'Pago MP')}</div>
+        <div style="font-size:.7rem;color:var(--muted)">${fd(p.date_created||p.date_approved)}</div>
+      </div>
+      <div style="text-align:right">
+        <div style="font-family:'Oswald',sans-serif;font-size:.95rem;font-weight:700;color:var(--gold)">$${fmt(p.transaction_amount||0)}</div>
+        <div style="font-size:.65rem;color:#2E7D52;font-weight:600">✓ MP</div>
+      </div>
+    </div>`).join('');
+  }catch(e){el.innerHTML=`<div style="color:var(--er);font-size:.82rem">Error: ${e.message}</div>`;}
+}
+
+// EDITAR PARTNER
+function abrirEditPartner(p) {
+  document.getElementById('pe-id').value = p.id;
+  document.getElementById('pe-monto').value = p.monto_mensual;
+  document.getElementById('pe-estado').value = p.estado;
+  document.getElementById('pe-publico').value = String(p.mostrar_publico !== false);
+  document.getElementById('pe-mostrar-monto').value = String(p.mostrar_monto_publico || false);
+  // Fill tier select
+  const sel = document.getElementById('pe-tier');
+  sel.innerHTML = '<option value="">Sin tier</option>' + tiers.map(t=>`<option value="${t.id}">${x(t.nombre)}</option>`).join('');
+  sel.value = p.tier_id || '';
+  document.getElementById('modal-partner-edit').classList.add('open');
+}
+async function guardarPartnerEdit() {
+  const id = document.getElementById('pe-id').value;
+  const payload = {
+    tier_id: document.getElementById('pe-tier').value || null,
+    monto_mensual: Number(document.getElementById('pe-monto').value),
+    estado: document.getElementById('pe-estado').value,
+    mostrar_publico: document.getElementById('pe-publico').value === 'true',
+    mostrar_monto_publico: document.getElementById('pe-mostrar-monto').value === 'true',
+  };
+  try {
+    const r = await fetch(`${API}/partners/${id}`, {method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
+    if (!r.ok) throw new Error((await r.json()).error||'Error');
+    document.getElementById('modal-partner-edit').classList.remove('open');
+    cargarPartners();
+  } catch(e) { alert('Error: '+e.message); }
+}
+
+async function cargarPartners(){
+  const estado=document.getElementById('prt-estado').value;
+  const res=await fetch(`${API}/partners?estado=${estado}`);
+  const {partners}=await res.json();
+  const el=document.getElementById('partners-list');
+  if(!partners?.length){el.innerHTML='<div style="color:var(--muted);font-style:italic">Sin partners en este estado.</div>';return;}
+  // Agrupar por tier
+  const byTier={};
+  partners.forEach(p=>{const t=p.tiers_partner?.nombre||'Sin tier';if(!byTier[t])byTier[t]={color:p.tiers_partner?.color||'#C9974A',items:[]};byTier[t].items.push(p);});
+  el.innerHTML=Object.entries(byTier).map(([tier,{color,items}])=>`
+    <div style="margin-bottom:1.5rem">
+      <div style="display:flex;align-items:center;gap:.5rem;margin-bottom:.75rem">
+        <span style="width:11px;height:11px;border-radius:50%;background:${color};display:inline-block"></span>
+        <strong style="font-family:'Oswald',sans-serif">${x(tier)}</strong>
+        <span style="font-size:.75rem;color:var(--muted)">${items.length} socio${items.length!==1?'s':''}</span>
+      </div>
+      ${items.map(p=>`<div class="partner-card">
+        <div class="pname">${x(p.donantes?.nombre||'')} ${x(p.donantes?.apellido||'')} <span style="font-size:.7rem;color:var(--gold)">${x(p.donantes?.donante_id||'')}</span></div>
+        <div class="pmonto">$${fmt(p.monto_mensual)}/mes</div>
+        <span class="pest ${p.estado}">${p.estado}</span>
+        ${p.estado==='activo'?`<button class="btn btn-out btn-sm" onclick="cambiarEstPrt('${p.id}','pausado')">Pausar</button><button class="btn btn-dan btn-sm" onclick="cambiarEstPrt('${p.id}','cancelado')">Cancelar</button>`:''}        <button class="btn btn-out btn-sm" onclick="abrirEditPartner(${JSON.stringify(p).replace(/"/g,'&quot;')})">✏️</button>
+        ${p.estado==='pausado'?`<button class="btn btn-ok btn-sm" onclick="cambiarEstPrt('${p.id}','activo')">Reactivar</button>`:''}
+      </div>`).join('')}
+    </div>`).join('');
+}
+async function cambiarEstPrt(id,estado){
+  if(!confirm(`¿${estado==='cancelado'?'Cancelar':'Cambiar'} esta suscripción?`))return;
+  await fetch(`${API}/partners/${id}`,{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify({estado})});
+  cargarPartners();
+}
+
+// MODAL PARTNER
+let buscarTimeout=null;
+function buscarDonante(){
+  clearTimeout(buscarTimeout);
+  buscarTimeout=setTimeout(async()=>{
+    const q=document.getElementById('mp-buscar').value.trim();
+    if(q.length<2){document.getElementById('mp-resultados').style.display='none';return;}
+    const res=await fetch(`${API}/donantes?q=${encodeURIComponent(q)}&limit=5`);
+    const {donantes}=await res.json();
+    const el=document.getElementById('mp-resultados');
+    if(!donantes?.length){el.style.display='block';el.innerHTML='<div style="font-size:.82rem;color:var(--muted)">Sin resultados</div>';return;}
+    el.style.display='block';
+    el.innerHTML=donantes.map(d=>`<div onclick="selDonantePrt('${d.id}','${x(d.nombre)} ${x(d.apellido)}','${d.donante_id}')" style="padding:.5rem .75rem;border:1px solid var(--bd);border-radius:8px;margin-bottom:.3rem;cursor:pointer;font-size:.85rem;transition:all .1s" onmouseover="this.style.background='var(--gp)'" onmouseout="this.style.background='white'">${x(d.donante_id)} — ${x(d.nombre)} ${x(d.apellido)} ${d.email?'('+x(d.email)+')':''}</div>`).join('');
+  },300);
+}
+function selDonantePrt(id,nombre,did){
+  document.getElementById('mp-donante-id').value=id;
+  const sel=document.getElementById('mp-donante-sel');sel.style.display='block';sel.textContent=`✓ ${nombre} (${did})`;
+  document.getElementById('mp-resultados').style.display='none';
+  document.getElementById('mp-buscar').value='';
+}
+function cerrarModalPartner(){document.getElementById('modal-partner').classList.remove('open');document.getElementById('mp-donante-id').value='';document.getElementById('mp-donante-sel').style.display='none';document.getElementById('mp-buscar').value='';}
+async function guardarPartner(){
+  const did=document.getElementById('mp-donante-id').value;
+  const monto=Number(document.getElementById('mp-monto').value);
+  if(!did){alert('Buscá y seleccioná un donante.');return;}
+  if(!monto){alert('Ingresá el monto mensual.');return;}
+  const payload={donante_id:did,tier_id:document.getElementById('mp-tier').value||null,monto_mensual:monto,mostrar_publico:document.getElementById('mp-publico').value==='true',mostrar_monto_publico:document.getElementById('mp-mostrar-monto').value==='true'};
+  try{
+    const res=await fetch(API+'/partners',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
+    const data=await res.json(); if(!res.ok) throw new Error(data.error||'Error');
+    cerrarModalPartner(); cargarPartners();
+  }catch(e){alert('Error: '+e.message);}
+}
+
+// CONFIG
+function renderConfig(){
+  document.getElementById('cat-list').innerHTML=categorias.map(c=>`<div class="cfg-item"><div class="cfg-dot" style="background:${c.color}"></div><div class="cfg-name">${x(c.nombre)}</div><button class="btn btn-dan btn-sm" onclick="eliminarCategoria('${c.id}')">✕</button></div>`).join('')||'<div style="color:var(--muted);font-size:.84rem">Sin categorías</div>';
+  document.getElementById('tier-list').innerHTML=tiers.map(t=>`<div class="cfg-item"><div class="cfg-dot" style="background:${t.color}"></div><div style="flex:1"><div class="cfg-name">${x(t.nombre)}</div><div class="cfg-sub">Desde $${fmt(t.monto_minimo)}/mes · ${(t.montos||[]).length} montos</div></div><button class="btn btn-out btn-sm" onclick="abrirModalTier(${JSON.stringify(t).replace(/"/g,'&quot;')})">✏️</button><button class="btn btn-dan btn-sm" onclick="eliminarTier('${t.id}')">✕</button></div>`).join('')||'<div style="color:var(--muted);font-size:.84rem">Sin tiers</div>';
+  document.getElementById('campos-list').innerHTML=camposCustom.map(c=>`<div class="cfg-item"><div><div class="cfg-name">${x(c.etiqueta)}</div><div class="cfg-sub">${c.tipo}${c.requerido?' · obligatorio':''}${c.en_formulario?' · en formulario':''}</div></div><button class="btn btn-dan btn-sm" onclick="eliminarCampo('${c.id}')">✕</button></div>`).join('')||'<div style="color:var(--muted);font-size:.84rem">Sin campos</div>';
+}
+async function nuevaCategoria(){const nombre=prompt('Nombre:');if(!nombre)return;const color=prompt('Color hex:','#C9974A');if(!color)return;await fetch(API+'/categorias',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({nombre,color})});cargarTodo();setTimeout(renderConfig,800);}
+async function eliminarCategoria(id){if(!confirm('¿Eliminar categoría?'))return;await fetch(`${API}/categorias/${id}`,{method:'DELETE'});cargarTodo();setTimeout(renderConfig,800);}
+async function nuevoTier(){const nombre=prompt('Nombre:');if(!nombre)return;const monto=Number(prompt('Monto mínimo mensual:'));if(!monto)return;const color=prompt('Color hex:','#C9974A');if(!color)return;await fetch(API+'/tiers',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({nombre,monto_minimo:monto,color,activo:true,orden:99})});cargarTodo();setTimeout(renderConfig,800);}
+async function eliminarTier(id){if(!confirm('¿Desactivar tier?'))return;await fetch(`${API}/tiers/${id}`,{method:'DELETE'});cargarTodo();setTimeout(renderConfig,800);}
+async function nuevoCampo(){
+  const etiqueta=prompt('Nombre visible del campo (ej: Colegio):');if(!etiqueta)return;
+  const nombre=etiqueta.toLowerCase().replace(/[^a-z0-9]/g,'_');
+  const tipo=prompt('Tipo (texto/numero/fecha/opciones/booleano):','texto')||'texto';
+  const requerido=confirm('¿Es obligatorio?');
+  const enForm=confirm('¿Mostrar en formulario de pago?');
+  let opciones=null;
+  if(tipo==='opciones'){const ops=prompt('Opciones separadas por coma:');opciones=ops?ops.split(',').map(o=>o.trim()):[]; }
+  await fetch(API+'/campos-custom',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({nombre,etiqueta,tipo,requerido,en_formulario:enForm,opciones,activo:true,orden:99})});
+  cargarTodo();setTimeout(renderConfig,800);
+}
+async function eliminarCampo(id){if(!confirm('¿Desactivar campo?'))return;await fetch(`${API}/campos-custom/${id}`,{method:'DELETE'});cargarTodo();setTimeout(renderConfig,800);}
+
+// IMPORTAR
+function csvToArray(text){
+  const lines=text.split('\n').filter(l=>l.trim());
+  const headers=lines[0].split(',').map(h=>h.trim().replace(/"/g,'').toLowerCase());
+  return lines.slice(1).map(line=>{const vals=line.split(',').map(v=>v.trim().replace(/^"|"$/g,''));const obj={};headers.forEach((h,i)=>obj[h]=vals[i]||'');return obj;}).filter(o=>Object.values(o).some(v=>v));
+}
+async function importarDonantes(input){
+  const file=input.files[0];if(!file)return;
+  const text=await file.text();
+  const lista=csvToArray(text).map(d=>{const cat=categorias.find(c=>c.nombre.toLowerCase()===d.categoria?.toLowerCase());return{...d,categoria_id:cat?.id||null};}).filter(d=>d.nombre&&d.apellido);
+  const res=await fetch(API+'/donantes/importar',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({donantes:lista})});
+  const data=await res.json();
+  const el=document.getElementById('import-don-res');el.className='import-res vis';
+  el.innerHTML=`<span style="color:${data.ok===data.total?'var(--ok)':'var(--er)'}">✓ ${data.ok}/${data.total} importados</span>`;
+  cargarTodo();
+}
+async function importarDonaciones(input){
+  const file=input.files[0];if(!file)return;
+  const text=await file.text();
+  const donaciones=csvToArray(text).filter(d=>d.donante_id&&d.monto);
+  const res=await fetch(API+'/donaciones/importar',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({donaciones})});
+  const data=await res.json();
+  const el=document.getElementById('import-don2-res');el.className='import-res vis';
+  el.innerHTML=`<span style="color:${data.ok===data.total?'var(--ok)':'var(--er)'}">✓ ${data.ok}/${data.total} importadas</span>`;
+}
+async function importarPartners(input){
+  const file=input.files[0];if(!file)return;
+  const text=await file.text();
+  const partners=csvToArray(text).filter(p=>p.monto_mensual);
+  const res=await fetch(API+'/partners/importar',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({partners})});
+  const data=await res.json();
+  const el=document.getElementById('import-prt-res');el.className='import-res vis';
+  el.innerHTML=`<span style="color:${data.ok===data.total?'var(--ok)':'var(--er)'}">✓ ${data.ok}/${data.total} importados</span>`;
+  cargarPartners();
+}
+
+// UTILS
+function descargarCSV(headers,rows,name){
+  const csv=[headers,...rows].map(r=>r.map(v=>`"${String(v).replace(/"/g,'""')}"`).join(',')).join('\n');
+  const a=document.createElement('a');a.href=URL.createObjectURL(new Blob(['\uFEFF'+csv],{type:'text/csv;charset=utf-8;'}));a.download=`${name}-${new Date().toISOString().slice(0,10)}.csv`;a.click();
+}
+const fmt=n=>new Intl.NumberFormat('es-AR').format(Math.round(n||0));
+const x=s=>String(s||'').replace(/[<>&"]/g,c=>({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'}[c]));
+const fd=s=>{if(!s)return'—';try{return new Date(s).toLocaleString('es-AR',{day:'2-digit',month:'2-digit',year:'2-digit',hour:'2-digit',minute:'2-digit'})}catch(e){return s;}};
+
+async function descargarRedirects(){
+  const r=await fetch(API+'/campanas');
+  const d=await r.json();
+  const camps=d.campanas||[];
+  
+  let lines=[
+    '# Generado automáticamente por El Lazo Admin',
+    '# Subir junto con los archivos HTML en Cloudflare Pages',
+    '',
+    '/admin      /admin.html      200',
+    '/mi-cuenta  /mi-cuenta.html  200',
+    '',
+    '# Campañas',
+  ];
+  
+  camps.filter(c=>c.activa).forEach(c=>{
+    lines.push(`/${c.slug}  /pago.html?s=${c.slug}  301`);
+  });
+  
+  const blob=new Blob([lines.join('\n')],{type:'text/plain'});
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);
+  a.download='_redirects';
+  a.click();
+}
+
+</script>
+</body></html>
