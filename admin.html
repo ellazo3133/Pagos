@@ -890,7 +890,7 @@ async function guardarCamposDon(){
   }catch(e){alert(e.message);}
 }
 
-function abrirDrawer(id){
+async function abrirDrawer(id){
   const d=todoDonantes.find(d=>d.id===id); if(!d) return;
   donanteActivo=d;
   document.getElementById('drw-id').textContent=d.donante_id;
