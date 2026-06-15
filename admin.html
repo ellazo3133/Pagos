@@ -1069,6 +1069,10 @@ async function nuevaCategoria(){const nombre=prompt('Nombre:');if(!nombre)return
 async function eliminarCategoria(id){if(!confirm('¿Eliminar categoría?'))return;await fetch(`${API}/categorias/${id}`,{method:'DELETE'});cargarTodo();setTimeout(renderConfig,800);}
 async function nuevoTier(){const nombre=prompt('Nombre:');if(!nombre)return;const monto=Number(prompt('Monto mínimo mensual:'));if(!monto)return;const color=prompt('Color hex:','#C9974A');if(!color)return;await fetch(API+'/tiers',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({nombre,monto_minimo:monto,color,activo:true,orden:99})});cargarTodo();setTimeout(renderConfig,800);}
 async function eliminarTier(id){if(!confirm('¿Desactivar tier?'))return;await fetch(`${API}/tiers/${id}`,{method:'DELETE'});cargarTodo();setTimeout(renderConfig,800);}
+async function toggleTier(id,activar){
+  await fetch(`${API}/tiers/${id}`,{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify({activo:activar})});
+  cargarTodo();setTimeout(renderConfig,800);
+}
 async function nuevoCampo(){
   const etiqueta=prompt('Nombre visible del campo (ej: Colegio):');if(!etiqueta)return;
   const nombre=etiqueta.toLowerCase().replace(/[^a-z0-9]/g,'_');
