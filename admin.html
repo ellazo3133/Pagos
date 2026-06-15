@@ -523,6 +523,24 @@ td.monto{font-family:'Oswald',sans-serif;font-size:1rem;font-weight:600;color:va
       <h3>Historial</h3>
       <div id="drw-hist"></div>
     </div>
+    <div class="drw-sec" id="drw-campos-sec" style="display:none">
+      <h3>Campos adicionales</h3>
+      <div id="drw-campos-list"></div>
+      <button class="btn btn-out btn-sm" style="margin-top:.6rem" onclick="abrirFormCampos()">✏️ Editar campos</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL CAMPOS CUSTOM DEL DONANTE -->
+<div class="modal-bg" id="modal-campos-don">
+  <div class="modal">
+    <h2>Campos adicionales</h2>
+    <p style="font-size:.82rem;color:var(--muted);margin-bottom:1rem">Completá los campos personalizados para este donante.</p>
+    <div id="modal-campos-don-body"></div>
+    <div class="modal-actions">
+      <button class="btn btn-out" onclick="document.getElementById('modal-campos-don').classList.remove('open')">Cancelar</button>
+      <button class="btn btn-gold" onclick="guardarCamposDon()">Guardar</button>
+    </div>
   </div>
 </div>
 
@@ -796,7 +814,84 @@ async function guardarDon(){
 }
 
 // DRAWER
-async function abrirDrawer(id){
+async 
+// CAMPOS CUSTOM DEL DONANTE
+let camposCustom=[];
+let valoresCampos={};
+
+async function cargarCamposCustom(){
+  const r=await fetch(API+'/campos-custom');
+  const d=await r.json();
+  camposCustom=d.campos||[];
+}
+
+async function mostrarCamposDonante(donante){
+  if(!camposCustom.length) await cargarCamposCustom();
+  if(!camposCustom.length) return;
+  
+  // Load saved values for this donor
+  try{
+    const r=await fetch(`${API}/donantes/${donante.id}/campos`);
+    if(r.ok){const d=await r.json();valoresCampos=d.valores||{};}
+  }catch(e){valoresCampos={};}
+  
+  document.getElementById('drw-campos-sec').style.display='block';
+  renderCamposList();
+}
+
+function renderCamposList(){
+  const el=document.getElementById('drw-campos-list');
+  if(!camposCustom.length){el.innerHTML='<div style="color:var(--muted);font-size:.82rem">Sin campos configurados</div>';return;}
+  el.innerHTML=camposCustom.map(c=>{
+    const val=valoresCampos[c.nombre]||valoresCampos[c.id]||'';
+    return`<div style="display:flex;justify-content:space-between;align-items:flex-start;gap:.5rem;padding:.45rem 0;border-bottom:1px solid var(--bd);font-size:.84rem">
+      <span style="color:var(--muted);font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;flex-shrink:0">${x(c.etiqueta)}</span>
+      <span style="font-weight:600;text-align:right">${val?x(String(val)):'<span style="color:var(--muted);font-style:italic">—</span>'}</span>
+    </div>`;
+  }).join('');
+}
+
+function abrirFormCampos(){
+  if(!camposCustom.length)return;
+  const body=document.getElementById('modal-campos-don-body');
+  body.innerHTML=camposCustom.map(c=>{
+    const val=valoresCampos[c.nombre]||valoresCampos[c.id]||'';
+    const inputId=`mcd_${c.id}`;
+    let input='';
+    if(c.tipo==='opciones'){
+      input=`<select id="${inputId}" style="width:100%;border:1.5px solid var(--bd);border-radius:8px;padding:.6rem .8rem;font-size:.88rem;font-family:'Poppins',sans-serif"><option value="">— Sin valor —</option>${(c.opciones||[]).map(o=>`<option value="${x(o)}"${val===o?' selected':''}>${x(o)}</option>`).join('')}</select>`;
+    } else if(c.tipo==='numero'){
+      input=`<input type="number" id="${inputId}" value="${x(String(val))}" style="width:100%;border:1.5px solid var(--bd);border-radius:8px;padding:.6rem .8rem;font-size:.88rem;font-family:'Poppins',sans-serif"/>`;
+    } else if(c.tipo==='fecha'){
+      input=`<input type="date" id="${inputId}" value="${x(String(val))}" style="width:100%;border:1.5px solid var(--bd);border-radius:8px;padding:.6rem .8rem;font-size:.88rem;font-family:'Poppins',sans-serif"/>`;
+    } else {
+      input=`<input type="text" id="${inputId}" value="${x(String(val))}" placeholder="Sin valor" style="width:100%;border:1.5px solid var(--bd);border-radius:8px;padding:.6rem .8rem;font-size:.88rem;font-family:'Poppins',sans-serif"/>`;
+    }
+    return`<div style="margin-bottom:.85rem"><label style="font-size:.68rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:.3rem">${x(c.etiqueta)}</label>${input}</div>`;
+  }).join('');
+  document.getElementById('modal-campos-don').classList.add('open');
+}
+
+async function guardarCamposDon(){
+  const nuevos={};
+  camposCustom.forEach(c=>{
+    const el=document.getElementById(`mcd_${c.id}`);
+    if(el&&el.value) nuevos[c.nombre]=el.value;
+  });
+  try{
+    const r=await fetch(`${API}/donantes/${donanteActivo.id}/campos`,{
+      method:'PUT',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({valores:nuevos})
+    });
+    if(!r.ok) throw new Error('Error al guardar');
+    valoresCampos=nuevos;
+    renderCamposList();
+    document.getElementById('modal-campos-don').classList.remove('open');
+  }catch(e){alert(e.message);}
+}
+
+function abrirDrawer(id){
   const d=todoDonantes.find(d=>d.id===id); if(!d) return;
   donanteActivo=d;
   document.getElementById('drw-id').textContent=d.donante_id;
@@ -810,6 +905,7 @@ async function abrirDrawer(id){
   // Show MP search if donor has email
   document.getElementById('drw-mp-btn-wrap').style.display=d.email?'block':'none';
   document.getElementById('drw-mp-result').innerHTML='';
+  mostrarCamposDonante(d);
   document.getElementById('drw-hist').innerHTML='<div style="color:var(--muted);font-style:italic;font-size:.84rem">Cargando...</div>';
   try{
     const res=await fetch(`${API}/donantes/${id}/historial`);
